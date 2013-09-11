@@ -39,6 +39,9 @@ group :development, :test do
   gem 'capybara'
 end
 
+#Add devise
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
