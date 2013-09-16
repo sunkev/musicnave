@@ -37,10 +37,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda'
   gem 'capybara'
+  gem 'launchy'
 end
 
 #Add devise
 gem 'devise'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

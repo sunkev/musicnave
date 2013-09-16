@@ -9,7 +9,8 @@ feature 'user logs in' do
 
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Sign In'
+    # save_and_open_page
+    click_button 'Sign in'
 
     expect(page).to have_content('Signed in successfully.')
   end
