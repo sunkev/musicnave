@@ -34,16 +34,21 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'shoulda'
+  gem 'factory_girl_rails'
+  gem 'pry-rails'
+  gem 'valid_attribute'
   gem 'capybara'
   gem 'launchy'
+  gem 'simple_form'
 end
+
+gem "database_cleaner", "~> 1.1.1"
 
 #Add devise
 gem 'devise'
-
-
+gem 'compass'
+gem 'zurb-foundation'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

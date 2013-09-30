@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Musicnave</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
 
-  <%= notice %>
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-<%= yield %>
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-</body>
+  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+<!-- ################################################# -->
+<!-- ##############      TOP BAR     ################# -->
+<!-- ################################################# -->
+
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, :class => "flash #{key}") %>
+<% end %>
+
+<!-- ################################################# -->
+<!-- ##############   USER SIGN UP   ################# -->
+<!-- ################################################# -->
+
+
+
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.username %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path %> |
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+
+
+
+
+
+
+
+    <div class="row">
+      <div class="large-8 columns"><%= yield %></div>
+    <div class="large-4 columns">
+      <h2 class="subheader"> SIDE BARRR </h2>
+      THE BEST TEXT
+    </div>
+
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
