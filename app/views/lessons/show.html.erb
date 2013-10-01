@@ -1,0 +1,37 @@
+<p>
+  <strong>Title:</strong>
+  <%= @lesson.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @lesson.description %>
+</p>
+
+<p>
+  <strong>Made by:</strong>
+  <%= User.find(@lesson.teacher_id) %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @lesson.created_at %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @comments.each do |comment| %>
+  <p> <%= comment %> </p>
+  <%- end %>
+</p>
+
+
+<%= form_for [@lesson, @comment] do |f| %>
+  <div class="field">
+    <%= f.label :body, 'Comment' %><br />
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

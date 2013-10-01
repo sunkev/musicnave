@@ -1,7 +1,9 @@
 Musicnave::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 
-  resources :lessons, only: [:index, :new, :create]
+  resources :lessons do
+    resources :comments, only: [:create], shallow: true
+  end
 
 
   get 'home/index'
