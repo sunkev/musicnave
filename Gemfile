@@ -41,6 +41,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simple_form'
+  gem 'quiet_assets'
 end
 
 gem "database_cleaner", "~> 1.1.1"
