@@ -45,14 +45,6 @@ feature 'user gives another user a private message', %Q{
     expect(page).to have_content(body_paragraph)
     expect(page).to have_content("Message sent")
 
-    click_button 'Sign out'
-    visit new_user_session_path
-    fill_in 'Username', with: kevin.username
-    fill_in 'Password', with: kevin.password
-
-    click_button 'Sign in'
-
-
   end
 
 
