@@ -10,4 +10,12 @@ class User < ActiveRecord::Base
 
   has_many :lessons
   has_many :comments
+  has_many :sent_messages, class_name: 'PrivateMessage',
+    inverse_of: :sender,
+    foreign_key: :sender_id
+
+  has_many :received_messages, class_name: 'PrivateMessage',
+    inverse_of: :recipient,
+    foreign_key: :recipient_id
+
 end

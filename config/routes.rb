@@ -6,6 +6,8 @@ Musicnave::Application.routes.draw do
   end
 
 
+  resources :private_messages, only: [:index, :new, :create, :show]
+
   get 'home/index'
 
   root 'home#index'

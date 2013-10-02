@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe User do
 
+  it { should have_many :sent_messages }
+  it { should have_many :received_messages }
+
   it { should have_valid(:first_name).when('Kevin', 'John') }
   it { should_not have_valid(:first_name).when(nil, '') }
 
@@ -22,6 +25,4 @@ describe User do
     expect(user).to_not be_valid
     expect(user.errors[:password_confirmation]).to_not be_blank
   end
-
-
 end

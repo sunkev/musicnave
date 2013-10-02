@@ -32,7 +32,6 @@ let(:student_user) { FactoryGirl.create(:user) }
     fill_in "comment_body", with: body_paragraph
     click_button 'Create Comment'
 
-    save_and_open_page
     expect(page).to have_content("Logout")
     expect(page).to have_content(body_paragraph)
     expect(page).to have_content(lesson.title)
