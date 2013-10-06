@@ -29,6 +29,9 @@ GEM
     arel (4.0.0)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -179,6 +182,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   capybara
   coffee-rails (~> 4.0.0)
   compass

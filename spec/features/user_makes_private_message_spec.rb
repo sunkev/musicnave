@@ -39,14 +39,14 @@ feature 'user gives another user a private message', %Q{
     fill_in "Body", with: body_paragraph
     click_button "Send message"
 
+    ## expect kevin and adam to receive messages
     expect(kevin.sent_messages.count).to eql(1)
     expect(adam.received_messages.count).to eql(1)
 
+    ## expect kevin's inbox to have message
     expect(page).to have_content(body_paragraph)
     expect(page).to have_content("Message sent")
-
   end
-
 
 
   scenario 'can see the date created'
