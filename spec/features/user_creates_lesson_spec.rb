@@ -26,4 +26,10 @@ let(:user) { FactoryGirl.create(:user) }
     click_button 'Create Lesson'
     expect(page).to have_content('Lesson successfully created')
   end
+
+  scenario 'User cannot make a lesson without authorizing' do
+
+    visit '/'
+    expect(page).to_not have_content('Private messages')
+  end
 end
