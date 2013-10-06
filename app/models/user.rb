@@ -18,4 +18,5 @@ class User < ActiveRecord::Base
     inverse_of: :recipient,
     foreign_key: :recipient_id
 
+  mount_uploader :photo, ProfilePhotoUploader
 end

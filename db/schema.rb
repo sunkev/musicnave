@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20131002134043) do
-=======
-ActiveRecord::Schema.define(version: 20131002003623) do
->>>>>>> 4d62134f2972aa177c1a6cedce578e20a2d9b51f
+ActiveRecord::Schema.define(version: 20131006205513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,15 +58,12 @@ ActiveRecord::Schema.define(version: 20131002003623) do
 
   add_index "notifications", ["conversation_id"], name: "index_notifications_on_conversation_id", using: :btree
 
-<<<<<<< HEAD
   create_table "private_messages", force: true do |t|
     t.integer "sender_id",    null: false
     t.integer "recipient_id", null: false
     t.text    "body",         null: false
   end
 
-=======
->>>>>>> 4d62134f2972aa177c1a6cedce578e20a2d9b51f
   create_table "receipts", force: true do |t|
     t.integer  "receiver_id"
     t.string   "receiver_type"
@@ -102,13 +95,10 @@ ActiveRecord::Schema.define(version: 20131002003623) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false
+    t.string   "photo"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  add_foreign_key "notifications", "conversations", name: "notifications_on_conversation_id"
-
-  add_foreign_key "receipts", "notifications", name: "receipts_on_notification_id"
 
 end
