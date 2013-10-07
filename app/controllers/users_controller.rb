@@ -13,13 +13,13 @@ class UsersController < ApplicationController
       flash[:alert] = 'Please provide a photo'
       render :show
     end
-
-
   end
-
 
   def user_params
     params.require(:user).permit(:photo)
   end
 
+  def lessons
+    @lessons = Lesson.where(teacher_id: current_user.id)
+  end
 end

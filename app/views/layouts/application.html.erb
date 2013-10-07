@@ -53,24 +53,26 @@
 
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="divider hide-for-small"></li>
       <li class="has-form">
-
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.username %></strong>.
+          <li class="divider"></li>
+          <li> <%= link_to 'My Lessons', user_lessons_path(current_user) %> </li>
+
+
+          <li class="divider"></li>
           <li> <%= link_to 'My Profile', edit_user_registration_path %> </li>
           <li class="divider"></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
           <li class="divider"></li>
           <li><%= link_to 'Private messages', private_messages_path, class: 'button' %> </li>
         <% else %>
+          <li class="divider"></li>
           <li><%= link_to "Sign up", new_user_registration_path %> </li>
           <li class="divider"></li>
           <li><%= link_to "Login", new_user_session_path %> </li>
         <% end %>
-
       </li>
-
 
     </ul>
   </section>
@@ -82,9 +84,6 @@
 <!-- ################################################# -->
 
 
-
-
-
 <ul class="breadcrumbs">
     <li><a href="#">Home</a></li>
     <li><a href="#">Features</a></li>
@@ -92,16 +91,7 @@
     <li class="current"><a href="#">Cloning</a></li>
 </ul>
 
-
-
-    <div class="row">
-      <div class="large-8 columns"><%= yield %></div>
-    <div class="large-4 columns">
-      <h2 class="subheader"> SIDE BARRR </h2>
-      THE BEST TEXT
-
-    </div>
-
+<%= yield %>
 
     <%= javascript_include_tag "application" %>
   </body>

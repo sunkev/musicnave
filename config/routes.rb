@@ -12,7 +12,9 @@ Musicnave::Application.routes.draw do
 
   root 'home#index'
 
-  resources :users, only: [:update, :show]
+  resources :users, only: [:update, :show, :lesson] do
+    match 'lessons', to: 'users#lessons', via: [:get]
+  end
 
   #  priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

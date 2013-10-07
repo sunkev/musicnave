@@ -1,0 +1,13 @@
+<h1>My Lessons</h1>
+
+<ul>
+<% if @lessons.blank? %>
+  <%= "You have no lessons" %>
+<% else %>
+  <% @lessons.each do |lesson| %>
+    <li><%= lesson.title %></li>
+  <% end %>
+<% end %>
+</ul>
+
+<%= link_to "Make a lesson", new_lesson_path%>
