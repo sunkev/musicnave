@@ -1,2 +1,12 @@
 <%= image_tag @user.photo.url %>
 <%= content_tag :h2, 'Upload a Photo' %>
+
+<h1><%= "#{@user.username}'s Profile" %></h1>
+
+<ul>
+  <li><%= @user.first_name %></li>
+  <li><%= @user.last_name %></li>
+  <li><%= @user.email %></li>
+</ul>
+
+<%= link_to 'Edit Profile', edit_user_registration_path %>

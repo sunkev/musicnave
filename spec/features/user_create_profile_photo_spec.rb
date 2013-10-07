@@ -16,14 +16,14 @@ feature 'authenicated user adds a profile photo',%Q{
   describe 'a signed in user' do
 
     before(:each) do
-     user = FactoryGirl.create(:user)
-     visit '/'
-     click_on 'Login'
-     fill_in 'Username', with: user.username
-    fill_in 'Password', with: user.password
+      user = FactoryGirl.create(:user)
+      visit '/'
+      click_on 'Login'
+      fill_in 'Username', with: user.username
+      fill_in 'Password', with: user.password
 
-     click_button 'Sign in'
-     click_on 'My Profile'
+      click_button 'Sign in'
+      click_on 'Edit Profile'
     end
 
     scenario 'with an image selected' do
