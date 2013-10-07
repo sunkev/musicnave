@@ -11,7 +11,7 @@ feature 'User creates a lesson', %Q{
 # * Can invite anyone to the group
 # * Has a title, description, create date
 
-let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user) }
 
   scenario 'User makes a lesson successfully' do
 

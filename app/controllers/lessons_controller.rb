@@ -15,7 +15,6 @@ class LessonsController < ApplicationController
   end
 
   def create
-
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher_id = current_user.id
     if @lesson.save!
@@ -29,7 +28,6 @@ class LessonsController < ApplicationController
 
 
   private
-
   def set_lesson
      @lesson = Lesson.find(params[:id])
   end

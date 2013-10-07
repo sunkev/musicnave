@@ -4,25 +4,37 @@ feature 'view all lessons' do
 
   let(:kevin) { FactoryGirl.create(:user) }
 
-  scenario "user sees all public lessons" do
+  before(:all) do
+    @lessons = FactoryGirl.create_list(:lesson, 3)
+  end
 
-    lessons = FactoryGirl.create_list(:lesson, 3)
-
+  before(:each) do
     sign_in( kevin )
-    lessons.each do |lesson|
+  end
+
+  scenario "user sees all public lessons" do
+    @lessons.each do |lesson|
       expect(page).to have_content(lesson.title)
+      expect(page).to have_content(lesson.description)
+    end
+  end
+
+
+  scenario "user sees all public lessons from anywhere" do
+    click_on "Everyone's Lessons!"
+    @lessons.each do |lesson|
+      expect(page).to have_content(lesson.title)
+      expect(page).to have_content(lesson.description)
     end
   end
 
   scenario "user sees personal lessons" do
     title = 'Flute Lessons'
-    lessons = FactoryGirl.create_list(:lesson, 3)
-
-    sign_in( kevin )
     click_on 'My Lessons'
 
-    lessons.each do |lesson|
+    @lessons.each do |lesson|
       expect(page).to_not have_content(lesson.title)
+      expect(page).to_not have_content(lesson.description)
     end
 
     click_on 'Make a lesson'
