@@ -32,5 +32,4 @@ feature 'user can see edited profile photo',%Q{
       page.should have_content('Edit Profile')
       click_on 'Edit Profile'
     end
-  end
 end

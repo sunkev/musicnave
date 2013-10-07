@@ -58,10 +58,10 @@
           Logged in as <strong><%= current_user.username %></strong>.
           <li class="divider"></li>
           <li> <%= link_to 'My Lessons', user_lessons_path(current_user) %> </li>
-
-
           <li class="divider"></li>
-          <li> <%= link_to 'My Profile', edit_user_registration_path %> </li>
+          <li> <%= link_to 'My Profile', user_path(current_user) %> </li>
+          <li class="divider"></li>
+          <li> <%= link_to 'Edit Profile', edit_user_registration_path %> </li>
           <li class="divider"></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
           <li class="divider"></li>
