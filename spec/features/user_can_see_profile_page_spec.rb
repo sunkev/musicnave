@@ -29,7 +29,7 @@ feature 'user can see edited profile photo',%Q{
 
     scenario 'profile page links to edit profile' do
       click_on 'My Profile'
-      page.should have_content('Edit Profile')
-      click_on 'Edit Profile'
+      expect(page).to have_selector('a', text: 'Edit Profile', count: 2)
     end
+  end
 end
