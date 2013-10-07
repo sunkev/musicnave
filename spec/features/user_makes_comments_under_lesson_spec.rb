@@ -14,7 +14,6 @@ feature 'teacher or student makes a comment', %Q{
 
 let(:user) { FactoryGirl.create(:user) }
 let(:lesson) { FactoryGirl.create(:lesson) }
-
 let(:student_user) { FactoryGirl.create(:user) }
 
 
@@ -55,5 +54,4 @@ let(:student_user) { FactoryGirl.create(:user) }
     expect(page).to have_content(lesson.title)
     expect(page).to have_content("Unsucessful comment")
   end
-
 end

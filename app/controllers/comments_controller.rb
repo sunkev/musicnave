@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+
   def index
     @lesson = Lesson.find(params[:lesson_id])
     @comments = @lesson.comments

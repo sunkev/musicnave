@@ -38,6 +38,4 @@ feature 'authenicated user adds a profile photo',%Q{
       page.should have_content('Please provide a photo')
     end
   end
-
-
 end

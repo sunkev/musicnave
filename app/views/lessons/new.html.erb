@@ -3,3 +3,5 @@
   <%= f.input :description, as: :text %>
   <%= f.button :submit %>
 <% end %>
+
+<%= link_to "Cancel", user_lessons_path(current_user), class: 'button' %>
