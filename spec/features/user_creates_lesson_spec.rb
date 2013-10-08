@@ -27,6 +27,19 @@ feature 'User creates a lesson', %Q{
     expect(page).to have_content('Lesson successfully created')
   end
 
+  scenario 'User does not make a lesson successfully' do
+
+    visit new_user_session_path
+    fill_in 'Username', with: user.username
+    fill_in 'Password', with: user.password
+    click_button 'Sign in'
+
+    visit new_lesson_path(:user)
+    click_button 'Create Lesson'
+    expect(page).to_not have_content('Lesson successfully created')
+  end
+
+
   scenario 'User cannot make a lesson without authorizing' do
 
     visit '/'

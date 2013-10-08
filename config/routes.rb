@@ -3,6 +3,7 @@ Musicnave::Application.routes.draw do
 
   resources :lessons do
     resources :comments, only: [:create], shallow: true
+    resources :enrollments, only: [:create]
   end
 
 
@@ -12,8 +13,11 @@ Musicnave::Application.routes.draw do
 
   root 'home#index'
 
-  resources :users, only: [:update, :show, :lesson] do
-    match 'lessons', to: 'users#lessons', via: [:get]
+
+  resources :users, only: [:update, :show]
+
+  namespace :profile do
+    resources :lessons, only: [:index]
   end
 
   #  priority is based upon order of creation: first created -> highest priority.

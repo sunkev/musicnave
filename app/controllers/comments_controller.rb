@@ -1,27 +1,17 @@
 class CommentsController < ApplicationController
-
-  def index
-    @lesson = Lesson.find(params[:lesson_id])
-    @comments = @lesson.comments
-  end
+  before_filter :authenticate_user!, except: [:index]
 
   def create
     @lesson = Lesson.find(params[:lesson_id])
-    @comment = @lesson.comments.build(comment_params)
+    @comment = current_user.comments.build(comment_params)
+    @comment.lesson = @lesson
 
-    if user_signed_in?
-      @comment.user_id = current_user.id
-
-      if @comment.save
-        redirect_to lesson_path(@lesson),
-        notice: "Successful comment"
-      else
-        redirect_to lesson_path(@lesson),
-        notice: "Unsucessful comment"
-      end
+    if @comment.save
+      redirect_to lesson_path(@lesson),
+      notice: "Successful comment"
     else
-        redirect_to lesson_path(@lesson)
-        flash[notice] = "Not signed in"
+      flash[:notice] = "Unsuccessful comment"
+      render "lessons/show"
     end
   end
 

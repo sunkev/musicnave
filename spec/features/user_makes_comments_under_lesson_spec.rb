@@ -52,6 +52,6 @@ let(:student_user) { FactoryGirl.create(:user) }
 
     expect(page).to have_content("Logout")
     expect(page).to have_content(lesson.title)
-    expect(page).to have_content("Unsucessful comment")
+    expect(page).to have_content("Unsuccessful comment")
   end
 end

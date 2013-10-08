@@ -1,38 +1,36 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:show]
+  before_filter :authenticate_user!, only: [:create]
 
   def index
     @lessons = Lesson.all
   end
 
   def show
-    @comments = Comment.where(lesson_id: @lesson.id)
+    @lesson = Lesson.find(params[:id])
     @comment = Comment.new
   end
 
   def new
     @lesson = Lesson.new
+    @lesson.enrollments.build
   end
 
   def create
+
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher_id = current_user.id
-    if @lesson.save!
+    if @lesson.save
       redirect_to lesson_path(@lesson)
       flash[notice] = 'Lesson successfully created'
     else
-      redirect_to new_lesson_path
       flash[notice] = 'Lesson was not successfully created'
+      render :new
     end
   end
 
-
   private
-  def set_lesson
-     @lesson = Lesson.find(params[:id])
-  end
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :teacher_id)
+    params.require(:lesson).permit(:title, :description, student_ids: [])
   end
 end

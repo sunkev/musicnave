@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :username
 
   has_many :comments
+  has_many :enrollments
   has_many :sent_messages, class_name: 'PrivateMessage',
     inverse_of: :sender,
     foreign_key: :sender_id
@@ -25,5 +26,9 @@ class User < ActiveRecord::Base
 
   def name_and_username
     "#{first_name} #{last_name} (#{username})"
+  end
+
+  def abv_name
+    "#{first_name} #{last_name[0].capitalize}."
   end
 end

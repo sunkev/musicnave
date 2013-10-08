@@ -1,7 +1,10 @@
 <%= simple_form_for @lesson do |f| %>
   <%= f.input :title %>
   <%= f.input :description, as: :text %>
+
+  <%= f.association :students, label_method: :name_and_username %>
+
   <%= f.button :submit %>
 <% end %>
 
-<%= link_to "Cancel", user_lessons_path(current_user), class: 'button' %>
+<%= link_to "Cancel", profile_lessons_path, class: 'button' %>

@@ -20,7 +20,6 @@ FactoryGirl.define do
     end
 
     factory :lesson_with_comments, traits: [:with_comments]
-
   end
 
   factory :comment do
@@ -28,5 +27,4 @@ FactoryGirl.define do
     association :lesson
     association :user
   end
-
 end

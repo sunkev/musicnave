@@ -20,7 +20,7 @@
 
 <p>
   <strong>Comments:</strong>
-  <% @comments.each do |comment| %>
+  <% @lesson.comments.each do |comment| %>
   <p> Poster </p>
   <p> <%= User.find(comment.user_id).name_and_username %> </p>
   <p> Message </p>
@@ -28,6 +28,12 @@
   <%- end %>
 </p>
 
+<div>
+  Students
+  <% @lesson.students.each do |student| %>
+  <p><%= student.abv_name %></p>
+  <% end %>
+</div>
 
 <%= form_for [@lesson, @comment] do |f| %>
   <div class="field">

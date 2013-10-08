@@ -4,7 +4,7 @@ describe User do
 
   it { should have_many :sent_messages }
   it { should have_many :received_messages }
-  it { should have_many :students }
+  it { should have_many :enrollments }
 
   it { should have_valid(:first_name).when('Kevin', 'John') }
   it { should_not have_valid(:first_name).when(nil, '') }
