@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
   validates_presence_of :username
 
-  has_many :lessons
   has_many :comments
   has_many :sent_messages, class_name: 'PrivateMessage',
     inverse_of: :sender,
@@ -19,4 +18,12 @@ class User < ActiveRecord::Base
     foreign_key: :recipient_id
 
   mount_uploader :photo, ProfilePhotoUploader
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def name_and_username
+    "#{first_name} #{last_name} (#{username}"
+  end
 end

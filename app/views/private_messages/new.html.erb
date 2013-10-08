@@ -1,7 +1,7 @@
 <h2>Send Message</h2>
 
 <%= simple_form_for(@message) do |f| %>
-  <%= f.association :recipient, label_method: :username %>
+  <%= f.association :recipient, label_method: :name_and_username %>
   <%= f.input :body %>
 
   <%= f.button :submit, 'Send message', class: 'button' %>
