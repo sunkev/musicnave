@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006205513) do
+ActiveRecord::Schema.define(version: 20131008015742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,11 @@ ActiveRecord::Schema.define(version: 20131006205513) do
   end
 
   add_index "receipts", ["notification_id"], name: "index_receipts_on_notification_id", using: :btree
+
+  create_table "students", force: true do |t|
+    t.integer "lesson_id", null: false
+    t.integer "user_id",   null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

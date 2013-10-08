@@ -10,7 +10,7 @@
 
 <p>
   <strong>Made by:</strong>
-  <%= User.find(@lesson.teacher_id) %>
+  <%= User.find(@lesson.teacher_id).full_name %>
 </p>
 
 <p>
@@ -20,8 +20,11 @@
 
 <p>
   <strong>Comments:</strong>
-  <%= @comments.each do |comment| %>
-  <p> <%= comment %> </p>
+  <% @comments.each do |comment| %>
+  <p> Poster </p>
+  <p> <%= User.find(comment.user_id).name_and_username %> </p>
+  <p> Message </p>
+  <p> <%= comment.body %> </p>
   <%- end %>
 </p>
 

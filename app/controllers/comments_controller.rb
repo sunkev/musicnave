@@ -8,14 +8,20 @@ class CommentsController < ApplicationController
   def create
     @lesson = Lesson.find(params[:lesson_id])
     @comment = @lesson.comments.build(comment_params)
-    @comment.user_id = current_user.id
 
-    if @comment.save
-      redirect_to lesson_path(@lesson),
+    if user_signed_in?
+      @comment.user_id = current_user.id
+
+      if @comment.save
+        redirect_to lesson_path(@lesson),
         notice: "Successful comment"
+      else
+        redirect_to lesson_path(@lesson),
+        notice: "Unsucessful comment"
+      end
     else
-      redirect_to lesson_path(@lesson),
-      notice: "Unsucessful comment"
+        redirect_to lesson_path(@lesson)
+        flash[notice] = "Not signed in"
     end
   end
 

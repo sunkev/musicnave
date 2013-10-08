@@ -24,6 +24,6 @@ class User < ActiveRecord::Base
   end
 
   def name_and_username
-    "#{first_name} #{last_name} (#{username}"
+    "#{first_name} #{last_name} (#{username})"
   end
 end
