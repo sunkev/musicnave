@@ -2,17 +2,18 @@ Musicnave::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 
   resources :lessons do
+    member do
+      post 'enroll'
+    end
     resources :comments, only: [:create], shallow: true
     resources :enrollments, only: [:create]
   end
-
 
   resources :private_messages, only: [:index, :new, :create, :show]
 
   get 'home/index'
 
   root 'home#index'
-
 
   resources :users, only: [:update, :show]
 
