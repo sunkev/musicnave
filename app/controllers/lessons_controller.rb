@@ -29,18 +29,19 @@ class LessonsController < ApplicationController
 
   def enroll
     @lesson = Lesson.find(params[:id])
+    @comment = Comment.new
     if Enrollment.create(lesson_id: @lesson.id, user_id: current_user.id)
       flash[notice] = 'You are enrolled!'
-      render :new
+      render :show
     else
       flash[notice] = 'You are not enrolled!'
-      render :new
+      render :show
     end
   end
 
   def make_private
-    @comment = Comment.new
     @lesson = Lesson.find(params[:id])
+    @comment = Comment.new
     changed_private_value = @lesson.privacy_changer
     if Lesson.update(@lesson, private: changed_private_value)
       flash[notice] = 'You made the lesson private'

@@ -1,0 +1,1 @@
+a user should not be abled to be enrolled multiple times
