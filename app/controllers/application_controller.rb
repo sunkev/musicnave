@@ -15,7 +15,4 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     lessons_path
   end
-
 end
-
-  # before_filter :authenticate_user!, except: [:index. :show]

@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_filter :authenticate_user!, only: [:create]
+  before_filter :authenticate_user!, only: [:create, :enroll]
 
   def index
     @lessons = Lesson.all
@@ -39,7 +39,6 @@ class LessonsController < ApplicationController
   end
 
   private
-
   def lesson_params
     params.require(:lesson).permit(:title, :description, student_ids: [])
   end
