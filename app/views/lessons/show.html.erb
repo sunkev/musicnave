@@ -46,7 +46,11 @@
 <% end %>
 
 <% if @lesson.teacher_id == current_user.id %>
-  <%= link_to 'Make private', make_private_lesson_path(@lesson), method: :post, class: 'button' %>
+  <% if @lesson.private %>
+    <%= link_to 'Make public', update_privacy_lesson_path(@lesson), method: :post, class: 'button' %>
+  <% else %>
+    <%= link_to 'Make private', update_privacy_lesson_path(@lesson), method: :post, class: 'button' %>
+  <% end %>
 <% end %>
 
 <% if @lesson.teacher_id == current_user.id || @lesson.students.any? {|student| student.id == current_user.id} %>

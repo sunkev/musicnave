@@ -46,15 +46,18 @@ class LessonsController < ApplicationController
     end
   end
 
-  def make_private
+  def update_privacy
     @lesson = Lesson.find(params[:id])
     @comment = Comment.new
     changed_private_value = @lesson.privacy_changer
+    message = 'You have made the lesson '
+
     if Lesson.update(@lesson, private: changed_private_value)
-      flash[notice] = 'You made the lesson private'
-      render :show
+      @lesson = Lesson.find(params[:id])
+      @lesson.private ? flash[notice] = message + 'private' : flash[notice] = message + 'public'
+      redirect_to @lesson
     else
-      flash[notice] = 'You have not made the lesson private'
+      flash[notice] = 'Something went wrong'
       render :show
     end
   end

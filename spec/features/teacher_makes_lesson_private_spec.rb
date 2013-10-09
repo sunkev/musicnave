@@ -49,5 +49,25 @@ feature 'teacher can change the status of a lesson to private', %Q{
     expect(page).to_not have_content(body)
   end
 
-  scenario 'Teacher can make a lesson public'
+  scenario 'Teacher can make a lesson public' do
+    body = 'Flute Lessons'
+
+    sign_in(teacher)
+    visit new_lesson_path(:teacher)
+    fill_in 'Title', with: body
+    fill_in 'Description', with: 'The best lessons with KSun'
+    click_button 'Create Lesson'
+    expect(page).to have_content('Lesson successfully created')
+    click_on "Everyone's Lessons!"
+    click_on body
+    click_on 'Make private'
+
+    save_and_open_page
+    click_on 'Make public'
+    sign_out(teacher)
+
+    sign_in(student)
+    click_on "Everyone's Lessons!"
+    expect(page).to have_content(body)
+  end
 end
