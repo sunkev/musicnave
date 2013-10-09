@@ -39,7 +39,6 @@ feature 'User creates a lesson', %Q{
     expect(page).to_not have_content('Lesson successfully created')
   end
 
-
   scenario 'User cannot make a lesson without authorizing' do
 
     visit '/'
@@ -58,6 +57,4 @@ feature 'User creates a lesson', %Q{
     click_on 'Cancel'
     expect(page).to have_content('Make a lesson')
   end
-
-
 end

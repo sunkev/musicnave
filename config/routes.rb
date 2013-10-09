@@ -4,6 +4,7 @@ Musicnave::Application.routes.draw do
   resources :lessons do
     member do
       post 'enroll'
+      post 'make_private'
     end
     resources :comments, only: [:create], shallow: true
     resources :enrollments, only: [:create]

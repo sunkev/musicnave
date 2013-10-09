@@ -1,5 +1,6 @@
 class Lesson < ActiveRecord::Base
   validates_presence_of :title
+  validates :private, inclusion: [true, false]
 
   belongs_to :teacher,
     class_name: 'User'
@@ -14,4 +15,8 @@ class Lesson < ActiveRecord::Base
     inverse_of: :lesson
 
   accepts_nested_attributes_for :students
+
+  def privacy_changer
+    private ? false : true
+  end
 end

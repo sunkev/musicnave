@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :enroll]
 
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.where(private: false)
   end
 
   def show
@@ -38,8 +38,21 @@ class LessonsController < ApplicationController
     end
   end
 
+  def make_private
+    @comment = Comment.new
+    @lesson = Lesson.find(params[:id])
+    changed_private_value = @lesson.privacy_changer
+    if Lesson.update(@lesson, private: changed_private_value)
+      flash[notice] = 'You made the lesson private'
+      render :show
+    else
+      flash[notice] = 'You have not made the lesson private'
+      render :show
+    end
+  end
+
   private
   def lesson_params
-    params.require(:lesson).permit(:title, :description, student_ids: [])
+    params.require(:lesson).permit(:title, :private, :description, student_ids: [])
   end
 end

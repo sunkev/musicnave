@@ -24,5 +24,3 @@ feature 'teacher adds a student to the lesson at anytime' do
     expect(page).to have_content(adam.abv_name)
   end
 end
-
-# lesson[student_ids][]
