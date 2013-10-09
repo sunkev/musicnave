@@ -48,4 +48,6 @@ feature 'teacher can change the status of a lesson to private', %Q{
     click_on "Everyone's Lessons!"
     expect(page).to_not have_content(body)
   end
+
+  scenario 'Teacher can make a lesson public'
 end

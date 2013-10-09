@@ -30,11 +30,18 @@ class LessonsController < ApplicationController
   def enroll
     @lesson = Lesson.find(params[:id])
     @comment = Comment.new
-    if Enrollment.create(lesson_id: @lesson.id, user_id: current_user.id)
-      flash[notice] = 'You are enrolled!'
-      render :show
+    update_params = {lesson_id: @lesson.id, user_id: current_user.id}
+
+    if Enrollment.where(update_params) == []
+      if Enrollment.create(update_params)
+        flash[notice] = 'You are enrolled!'
+        render :show
+      else
+        flash[notice] = 'You are not enrolled!'
+        render :show
+      end
     else
-      flash[notice] = 'You are not enrolled!'
+      flash[notice] = 'You are already enrolled!'
       render :show
     end
   end

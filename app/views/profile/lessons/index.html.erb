@@ -5,9 +5,9 @@
   <%= "You have no lessons" %>
 <% else %>
   <% @lessons.each do |lesson| %>
-    <li><%= lesson.title %></li>
+    <li><%= link_to(lesson.title, lesson) %></li>
   <% end %>
 <% end %>
 </ul>
 
-<%= link_to "Make a lesson", new_lesson_path%>
+<%= link_to "Make a lesson", new_lesson_path, class: 'button'%>
