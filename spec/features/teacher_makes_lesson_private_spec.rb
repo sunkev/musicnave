@@ -20,7 +20,8 @@ feature 'teacher can change the status of a lesson to private', %Q{
     visit new_lesson_path(:teacher)
     fill_in 'Title', with: body
     fill_in 'Description', with: 'The best lessons with KSun'
-    page.check('Private')
+    check('Private')
+
     click_button 'Create Lesson'
     expect(page).to have_content('Lesson successfully created')
     sign_out(teacher)

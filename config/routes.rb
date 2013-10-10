@@ -6,7 +6,7 @@ Musicnave::Application.routes.draw do
       post 'enroll'
       post 'update_privacy'
     end
-    resources :comments, only: [:create], shallow: true
+    resources :comments, only: [:create, :edit, :update], shallow: true
     resources :enrollments, only: [:create]
   end
 

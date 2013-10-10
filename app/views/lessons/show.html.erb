@@ -25,6 +25,9 @@
   <p> <%= User.find(comment.user_id).name_and_username %> </p>
   <p> Message </p>
   <p> <%= comment.body %> </p>
+  <p> <% if comment.user_id == current_user.id %> </p>
+    <li> <%= link_to 'Edit comment', edit_comment_path(comment) %></li>
+      <%- end %>
   <%- end %>
 </p>
 

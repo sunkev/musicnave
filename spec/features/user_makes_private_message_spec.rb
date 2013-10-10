@@ -31,8 +31,6 @@ feature 'user gives another user a private message', %Q{
 
     click_button 'Sign in'
 
-    visit root_path
-
     click_link "Private messages"
     click_link "New message"
     select adam.username, from: 'Recipient'
@@ -48,6 +46,5 @@ feature 'user gives another user a private message', %Q{
     expect(page).to have_content("Message sent")
   end
 
-
-  scenario 'can see the date created'
+  # scenario 'can see the date created'
 end
