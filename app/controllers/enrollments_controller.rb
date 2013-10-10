@@ -1,7 +1,4 @@
 class EnrollmentsController < ApplicationController
-  # def create
-  #    @enrollment = Entrollment.new(comment_params)
-  # end
 
   private
   def comment_params

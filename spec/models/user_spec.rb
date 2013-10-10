@@ -26,4 +26,32 @@ describe User do
     expect(user).to_not be_valid
     expect(user.errors[:password_confirmation]).to_not be_blank
   end
+
+  describe '#full_name' do
+    it 'should give the full name' do
+      user = User.new
+      user.first_name = 'kevin'
+      user.last_name = 'sun'
+      expect(user.full_name).to eql('kevin sun')
+    end
+  end
+
+  describe '#name_and_username' do
+    it 'should give the full name and username' do
+      user = User.new
+      user.first_name = 'kevin'
+      user.last_name = 'sun'
+      user.username = 'sunkev'
+      expect(user.name_and_username).to eql('kevin sun (sunkev)')
+    end
+  end
+
+  describe '#abv_name' do
+    it 'should give first name and abv last name' do
+      user = User.new
+      user.first_name = 'kevin'
+      user.last_name = 'sun'
+      expect(user.abv_name).to eql('kevin s.')
+    end
+  end
 end

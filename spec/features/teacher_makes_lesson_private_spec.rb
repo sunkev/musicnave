@@ -62,7 +62,6 @@ feature 'teacher can change the status of a lesson to private', %Q{
     click_on body
     click_on 'Make private'
 
-    save_and_open_page
     click_on 'Make public'
     sign_out(teacher)
 

@@ -1,7 +1,7 @@
 Musicnave::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 
-  resources :lessons do
+  resources :lessons, except: [:destroy] do
     member do
       post 'enroll'
       post 'update_privacy'

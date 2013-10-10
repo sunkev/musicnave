@@ -15,6 +15,23 @@ class LessonsController < ApplicationController
     @lesson.enrollments.build
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    respond_to do |format|
+      if @lesson.update(lesson_params)
+        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.teacher_id = current_user.id

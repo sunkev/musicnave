@@ -29,6 +29,6 @@ class User < ActiveRecord::Base
   end
 
   def abv_name
-    "#{first_name} #{last_name[0].capitalize}."
+    "#{first_name} #{last_name[0]}."
   end
 end
