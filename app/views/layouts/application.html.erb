@@ -32,56 +32,54 @@
 <!-- ################################################# -->
 
 <div class="custom_nav">
-
-<nav class="top-bar">
-  <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><a href="http://localhost:3000/home/index">musicnave</h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    <ul class="left">
-    </ul>
-
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="has-form">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.username %></strong>.
-          <li class="divider"></li>
-          <li> <%= link_to 'Everyone\'s Lessons!', lessons_path %> </li>
-          <li class="divider"></li>
-          <li> <%= link_to 'My Lessons', profile_lessons_path %> </li>
-          <li class="divider"></li>
-          <li class="has-dropdown"><a href="#"><%= image_tag "message_edit.jpeg" %></a>
-            <ul class="dropdown">
-              <li><%= link_to 'Private messages', private_messages_path %> </li>
-            </ul>
-          </li>
-          <li class="divider"></li>
-          <li class="has-dropdown"><a href="#"><%= image_tag "settings3_edit.jpg" %></a>
-            <ul class="dropdown">
-              <li> <%= link_to 'My Profile', user_path(current_user) %> </li>
-              <li> <%= link_to 'Edit Profile', edit_user_registration_path %> </li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
-            </ul>
-          </li>
-        <% else %>
-          <li class="divider"></li>
-          <li><%= link_to "Sign up", new_user_registration_path %> </li>
-          <li class="divider"></li>
-          <li><%= link_to "Login", new_user_session_path %> </li>
-        <% end %>
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1><a href="http://localhost:3000/home/index">musicnave</h1>
       </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-  </section>
-</nav>
 
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+      </ul>
+
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="has-form">
+          <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.username %></strong>.
+            <li class="divider"></li>
+            <li> <%= link_to 'Everyone\'s Lessons!', lessons_path %> </li>
+            <li class="divider"></li>
+            <li> <%= link_to 'My Lessons', profile_lessons_path %> </li>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#"><%= image_tag "message_edit.jpeg" %></a>
+              <ul class="dropdown">
+                <li><%= link_to 'Private messages', private_messages_path %> </li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#"><%= image_tag "settings3_edit.jpg" %></a>
+              <ul class="dropdown">
+                <li> <%= link_to 'My Profile', user_path(current_user) %> </li>
+                <li> <%= link_to 'Edit Profile', edit_user_registration_path %> </li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="divider"></li>
+            <li><%= link_to "Sign up", new_user_registration_path %> </li>
+            <li class="divider"></li>
+            <li><%= link_to "Login", new_user_session_path %> </li>
+          <% end %>
+        </li>
+      </ul>
+    </section>
+  </nav>
 </div>
 <!-- ################################################# -->
 <!-- ##################   Errors  #################### -->
