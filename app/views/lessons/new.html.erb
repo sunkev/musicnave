@@ -4,14 +4,9 @@
   <%= f.input :private %>
   <%= f.association :students, label_method: :name_and_username %>
 
-  <%= image_tag @lesson.photo.url %>
-    <%= content_tag :h2, 'Upload a Photo' %>
+  <div> Upload a Photo </div>
 
-    <%= form_for @lesson do |form| %>
-      <%= form.file_field :photo, required: true %>
-      <%= form.submit %>
-    <% end %>
-
+  <%= f.file_field :lesson_photo %>
   <%= f.button :submit %>
 <% end %>
 

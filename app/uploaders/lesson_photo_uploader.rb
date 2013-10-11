@@ -16,7 +16,12 @@ class LessonPhotoUploader < CarrierWave::Uploader::Base
     if Rails.env == 'test'
       "uploads/tmp"
     else
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    end
+  end
+
+  def extension_white_list
+    %w(jpg jpeg gif png)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

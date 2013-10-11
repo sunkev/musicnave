@@ -8,4 +8,10 @@
   <%= f.submit 'Confirm edit' %>
 <% end %>
 
+<div> Upload a Photo </div>
+<%= form_for @lesson do |form| %>
+  <%= form.file_field :lesson_photo, required: true %>
+  <%= form.submit %>
+<% end %>
+
 <%= link_to 'Back', lesson_path %>

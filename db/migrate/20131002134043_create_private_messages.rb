@@ -5,7 +5,7 @@ class CreatePrivateMessages < ActiveRecord::Migration
       t.integer :recipient_id, null: false
       t.text :body, null: false
 
-      t.timestamp
+      t.timestamps
     end
   end
 end
