@@ -16,6 +16,8 @@ class Lesson < ActiveRecord::Base
 
   accepts_nested_attributes_for :students
 
+  mount_uploader :lesson_photo, LessonPhotoUploader
+
   def privacy_changer
     private ? false : true
   end
