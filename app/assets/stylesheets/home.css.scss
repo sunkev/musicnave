@@ -1,28 +1,28 @@
 body {
-  // background: url(untitled_by_jeanfan.jpg) no-repeat top center fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-  // padding-top:0%;
-  // padding-bottom:60%;
-
-
+  background-color: #5893ac;
 }
 
 .custom_nav {
+  text-align:center;
 
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
-.title_name {
-  font-family: Georgia, Serif;
+.custom_nav .top-bar {
+  width: 1000px;
+  display:inline-block;
+  box-shadow: 7px 5px 5px black;
 }
 
-// .top-bar {
-//   .title-area {
-//     .name {
-//       font-family: Georgia, Serif;
-//     }
-//   }
-// }
+.custom_nav .right {
+  // font-family: 'ProximaNovaSemibold',sans-serif;
+  font-size: 19px;
+}
 
+.body-styles {
+  width: 1000px;
+  display:inline-block;
+  background-color: #bbd2e0;
+  box-shadow: 7px 5px 5px black;
+}

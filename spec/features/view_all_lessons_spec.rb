@@ -18,7 +18,8 @@ feature 'view all lessons' do
 
 
   scenario "user sees all public lessons from anywhere" do
-    click_on "Everyone's Lessons!"
+    save_and_open_page
+    click_on "Find a Lesson!"
     lessons.each do |lesson|
       expect(page).to have_content(lesson.title)
       expect(page).to have_content(lesson.description)

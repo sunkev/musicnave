@@ -40,7 +40,7 @@ feature 'Users can edit their own lessons or comments', %Q{
   #   sign_in(student)
   #   comment.user_id = student.id
   #   comment.save
-  #   click_on "Everyone's Lessons!"
+  #   click_on "Find a Lesson!"
   #   click_on Lesson.last.title
 
   #   click_on 'Edit comment'

@@ -31,12 +31,13 @@
 <!-- ##############   USER SIGN UP   ################# -->
 <!-- ################################################# -->
 
+<!--  <div class="contain-to-grid"> -->
 <div class="custom_nav">
   <nav class="top-bar">
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
-        <h1><a href="http://localhost:3000/home/index">musicnave</h1>
+        <h1><a href="http://localhost:3000/home/index">musicnavi</h1>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -52,18 +53,19 @@
         <li class="has-form">
           <% if user_signed_in? %>
             Logged in as <strong><%= current_user.username %></strong>.
+          </li>
             <li class="divider"></li>
-            <li> <%= link_to 'Everyone\'s Lessons!', lessons_path %> </li>
+            <li class="special"> <%= link_to 'Find a Lesson!', lessons_path %> </li>
             <li class="divider"></li>
             <li> <%= link_to 'My Lessons', profile_lessons_path %> </li>
             <li class="divider"></li>
-            <li class="has-dropdown"><a href="#"><%= image_tag "message_edit.jpeg" %></a>
+            <li class="has-dropdown"><a href="#">Messages</a>
               <ul class="dropdown">
                 <li><%= link_to 'Private messages', private_messages_path %> </li>
               </ul>
             </li>
             <li class="divider"></li>
-            <li class="has-dropdown"><a href="#"><%= image_tag "settings3_edit.jpg" %></a>
+            <li class="has-dropdown"><a href="#">Settings</a>
               <ul class="dropdown">
                 <li> <%= link_to 'My Profile', user_path(current_user) %> </li>
                 <li> <%= link_to 'Edit Profile', edit_user_registration_path %> </li>
@@ -76,11 +78,13 @@
             <li class="divider"></li>
             <li><%= link_to "Login", new_user_session_path %> </li>
           <% end %>
-        </li>
+        <!-- /li> -->
       </ul>
     </section>
   </nav>
 </div>
+<!-- </div> -->
+
 <!-- ################################################# -->
 <!-- ##################   Errors  #################### -->
 <!-- ################################################# -->
@@ -88,9 +92,11 @@
 <% flash.each do |key, value| %>
   <%= content_tag(:div, value, :class => "flash #{key}") %>
 <% end %>
-
-
-<%= yield %>
+<div class="custom_nav">
+  <div class=body-styles>
+    <%= yield %>
+  </div>
+</div>
 
     <%= javascript_include_tag "application" %>
   </body>

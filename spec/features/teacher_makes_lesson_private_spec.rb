@@ -27,7 +27,7 @@ feature 'teacher can change the status of a lesson to private', %Q{
     sign_out(teacher)
 
     sign_in(student)
-    click_on "Everyone's Lessons!"
+    click_on "Find a Lesson!"
     expect(page).to_not have_content(body)
   end
 
@@ -40,13 +40,13 @@ feature 'teacher can change the status of a lesson to private', %Q{
     fill_in 'Description', with: 'The best lessons with KSun'
     click_button 'Create Lesson'
     expect(page).to have_content('Lesson successfully created')
-    click_on "Everyone's Lessons!"
+    click_on "Find a Lesson!"
     click_on body
     click_on 'Make private'
     sign_out(teacher)
 
     sign_in(student)
-    click_on "Everyone's Lessons!"
+    click_on "Find a Lesson!"
     expect(page).to_not have_content(body)
   end
 
@@ -59,7 +59,7 @@ feature 'teacher can change the status of a lesson to private', %Q{
     fill_in 'Description', with: 'The best lessons with KSun'
     click_button 'Create Lesson'
     expect(page).to have_content('Lesson successfully created')
-    click_on "Everyone's Lessons!"
+    click_on "Find a Lesson!"
     click_on body
     click_on 'Make private'
 
@@ -67,7 +67,7 @@ feature 'teacher can change the status of a lesson to private', %Q{
     sign_out(teacher)
 
     sign_in(student)
-    click_on "Everyone's Lessons!"
+    click_on "Find a Lesson!"
     expect(page).to have_content(body)
   end
 end

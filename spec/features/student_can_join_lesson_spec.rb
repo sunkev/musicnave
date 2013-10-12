@@ -17,7 +17,7 @@ feature 'Student finds a lesson and joins it', %Q{
   scenario 'Successfully find/joins lesson' do
     visit root_path
     sign_in(kevin)
-    click_on "Everyone's Lessons!"
+    click_on "Find a Lesson!"
     click_on lesson.title
     click_on 'Enroll now!'
     expect(page).to have_content('You are enrolled!')
