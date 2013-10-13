@@ -1,5 +1,6 @@
+
 body {
-  background-color: #5893ac;
+  background-color: rgb(225, 225, 225);
 }
 
 .custom_nav {
@@ -12,7 +13,9 @@ body {
 .custom_nav .top-bar {
   width: 1000px;
   display:inline-block;
-  box-shadow: 7px 5px 5px black;
+  // box-shadow: 5px 3px 3px #63625B;
+
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
 }
 
 .custom_nav .right {
@@ -24,5 +27,79 @@ body {
   width: 1000px;
   display:inline-block;
   background-color: #bbd2e0;
-  box-shadow: 7px 5px 5px black;
+  // box-shadow: 5px 3px 3px #63625B;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(255, 255, 255) inset;
+
 }
+
+.home-body {
+  background: url('hWc2igg.jpg') fixed;
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+}
+
+
+.myButton {
+
+    -moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    box-shadow:inset 0px 1px 0px 0px #54a3f7;
+
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+    background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+
+    background-color:#007dc1;
+
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+
+    border:1px solid #124d77;
+
+    display:inline-block;
+    color:#ffffff;
+    font-family:arial;
+    font-size:26px;
+    font-weight:normal;
+    padding:6px 10px;
+    text-decoration:none;
+
+    text-shadow:0px 1px 0px #154682;
+}
+
+.myButton:hover {
+
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+    background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+
+    background-color:#0061a7;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.homepage-caption {
+  font-family: Shift,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  // text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+  font-weight: bold;
+  color: rgb(80, 91, 101);
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+

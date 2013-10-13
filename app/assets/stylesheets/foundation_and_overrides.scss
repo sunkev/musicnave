@@ -164,7 +164,7 @@ $header-font-family: Georgia, Serif;
 
 // $header-font-weight: bold;
 // $header-font-style: normal;
-// $header-font-color: #222;
+// $header-font-color: #726962;
 // $header-line-height: 1.4;
 // $header-top-margin: .1em;
 // $header-bottom-margin: .3em;
@@ -1235,7 +1235,9 @@ $header-font-family: Georgia, Serif;
 
 // Background color for the top bar
 
-$topbar-bg: #003250;
+// $topbar-bg: #003250;
+$topbar-bg: rgb(252, 252, 252);
+
 
 // Height and margin
 
@@ -1262,7 +1264,9 @@ $topbar-title-font-size: emCalc(27.5);
 
 // Set the link colors and styles for top-level nav
 
-// $topbar-link-color: #fff;
+$topbar-link-color: rgb(80, 91, 101);
+
+
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-weight: bold;
