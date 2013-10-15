@@ -19,17 +19,9 @@
  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
-
-  <!-- styles needed by jScrollPane -->
-<link type="text/css" href="stylesheets/jquery.jscrollpane.css" rel="stylesheet" media="all" />
 <!-- latest jQuery direct from google's CDN -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
 </script>
-
-<!-- the mousewheel plugin - optional to provide mousewheel support -->
-<script type="text/javascript" src="javascript/jquery.mousewheel.js"></script>
-<!-- the jScrollPane script -->
-<script type="text/javascript" src="javascript/jquery.jscrollpane.min.js"></script>
 
  <%= stylesheet_link_tag    "application" %>
  <%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -129,20 +121,15 @@
               <% end %>
             </li>
             <% end %>
-            <!-- /li> -->
           </ul>
         </section>
       </nav>
+
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, :class => "alert") %>
+      <% end %>
     </div>
-    <!-- </div> -->
 
-    <!-- ################################################# -->
-    <!-- ##################   Errors  #################### -->
-    <!-- ################################################# -->
-
-    <% flash.each do |key, value| %>
-    <%= content_tag(:div, value, :class => "flash #{key}") %>
-    <% end %>
     <div class="custom_nav">
       <div class=body-styles>
         <%= yield %>

@@ -6,7 +6,7 @@
     padding-top: 20px;
 }
 
-#signup {
+.simple_form  {
     padding: 0px 25px 25px;
     background: #fff;
     box-shadow:
@@ -19,20 +19,22 @@
     position: static;
 }
 
-#signup .header {
+.simple_form  {
+    .header {
     margin-bottom: 20px;
     // text-align: left;
+    }
 }
 
-#signup .header h3 {
+.simple_form .header h3 {
     color: #333333;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 18px;
     margin-bottom: 0px;
 }
 
-#signup .header p {
+.simple_form .header p {
     color: #8f8f8f;
     font-size: 14px;
     font-weight: 300;
@@ -40,18 +42,18 @@
     margin-bottom: -5px;
 }
 
-#signup .sep {
+.simple_form .sep {
     height: 1px;
     background: #e8e8e8;
     width: 406px;
     margin: 0px -25px;
 }
 
-#signup .inputs {
+.simple_form .inputs {
     margin-top: 25px;
 }
 
-#signup .inputs label {
+.simple_form .inputs label {
 
     color: #8f8f8f;
     font-size: 12px;
@@ -69,25 +71,23 @@ input:-moz-placeholder {
     color:    #b5b5b5;
 }
 
-#signup .inputs .checkboxy {
+.simple_form .inputs .checkboxy {
     display: block;
     position: static;
     height: 25px;
-    margin-top: 5px;
     clear: both;
-
-     float: left;
+    float: left;
     font-size: 13px;
     font-style: italic;
 }
 
-#signup .inputs input[type=checkbox] {
+.simple_form .inputs input[type=checkbox] {
     float: left;
     margin-right: 10px;
     margin-top: 3px;
 }
 
-#signup .inputs .button {
+.simple_form .inputs .button {
     width: 100%;
     margin-top: 20px;
     padding: 15px 0;
@@ -126,7 +126,7 @@ input:-moz-placeholder {
     clear: both;
 }
 
-#signup .inputs #submit:hover {
+.simple_form .inputs #submit:hover {
     background: -moz-linear-gradient(
         top,
         #a4b0cb 0%,

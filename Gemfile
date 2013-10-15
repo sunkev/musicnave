@@ -23,9 +23,6 @@ gem 'jquery-rails'
 
 gem 'bourbon'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -45,7 +42,7 @@ group :development, :test do
   gem 'simple_form'
   gem 'quiet_assets'
 end
-
+gem 'chosen-rails'
 gem "database_cleaner", "~> 1.1.1"
 
 #Add devise
