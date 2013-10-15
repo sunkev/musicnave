@@ -4,119 +4,141 @@
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-  <head>
-  	<meta charset="utf-8" />
+<head>
+ <meta charset="utf-8" />
 
-  	<!-- Uncomment to make IE8 render like IE7 -->
-  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+ <!-- Uncomment to make IE8 render like IE7 -->
+ <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-  	<!-- Set the viewport width to device width for mobile -->
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- Set the viewport width to device width for mobile -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+ <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-  <!-- <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css"> -->
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-
-
-
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <body>
-
-<!-- ################################################# -->
-<!-- ##############      TOP BAR     ################# -->
-<!-- ################################################# -->
+ <!-- <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css"> -->
+ <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+ <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 
-<!-- ################################################# -->
-<!-- ##############   USER SIGN UP   ################# -->
-<!-- ################################################# -->
 
-<!--  <div class="contain-to-grid"> -->
-<div class="custom_nav">
-  <nav class="top-bar">
-    <ul class="title-area">
-      <!-- Title Area -->
-      <li class="name">
-        <h1><a href="http://localhost:3000/home/index"><i class="icon-fixed-width icon-home"></i>musicnavi</h1>
-      </li>
-      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
+ <%= stylesheet_link_tag    "application" %>
+ <%= javascript_include_tag "vendor/custom.modernizr" %>
+ <%= csrf_meta_tags %>
+</head>
 
-    <section class="top-bar-section">
-      <!-- Left Nav Section -->
-      <ul class="left">
+<body>
+
+  <!-- ################################################# -->
+  <!-- ##############      TOP BAR     ################# -->
+  <!-- ################################################# -->
+
+
+  <!-- ################################################# -->
+  <!-- ##############   USER SIGN UP   ################# -->
+  <!-- ################################################# -->
+
+  <!--  <div class="contain-to-grid"> -->
+  <div class="custom_nav">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="http://localhost:3000/home/index"><i class="icon-fixed-width icon-home"></i>musicnavi</h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
 
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <li class="has-form">
-          <% if user_signed_in? %>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+        </ul>
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="has-form">
+            <% if user_signed_in? %>
             Logged in as <strong><%= current_user.username %></strong>.
-          </li>
             <li class="divider"></li>
-            <li class="special"> <i class="icon-search"><%= link_to 'Find a Lesson!', lessons_path %> </li>
-            <li class="divider"></li>
-            <li><i class="icon-music"><%= link_to 'My Lessons', profile_lessons_path %> </li>
-            <li class="divider"></li>
-            <li class="has-dropdown"><i class="icon-envelope"><a href="#">Messages</a>
-              <ul class="dropdown">
-                <li><i class="icon-comment"><%= link_to 'Make a private message', private_messages_path %> </li>
-                <li><%= link_to 'View messages', private_messages_path(current_user) %> </li>
-              </ul>
+            <li>
+              <%= link_to lessons_path do %>
+              <i class="icon-search"></i> Find a Lesson!
+              <% end %>
             </li>
             <li class="divider"></li>
-            <li class="has-dropdown"><i class="icon-fixed-width icon-cogs"></i><a href="#">Settings</a>
-              <ul class="dropdown">
-                <li> <i class="icon-user"> <%= link_to 'My Profile', user_path(current_user) %> </li>
-                <li> <i class="icon-fixed-width icon-pencil"> <%= link_to 'Edit Profile', edit_user_registration_path %> </li>
-                <li><%= link_to '<i class="icon-signout"> Logout'.html_safe, destroy_user_session_path, method: :delete %>
-
-              <%= link_to destroy_user_session_path do %>
-               <i class="icon-signout"> Logout
-                <% method: :delete %>
+            <li>
+              <%= link_to profile_lessons_path do %>
+              <i class="icon-music"></i> My Lessons
               <% end %>
-
-
+            </li>
+            <li class="divider"></li>
+            <li class="has-dropdown">
+              <%= link_to private_messages_path(current_user) do %>
+              <i class="icon-envelope"></i> Messages &nbsp
+              <% end %>
+              <ul class="dropdown">
+                <li>
+                  <%= link_to private_messages_path(current_user) do %>
+                  <i class="icon-envelope-alt"></i> View messages
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to private_messages_path do %>
+                  <i class="icon-comment"></i> Send a message
+                  <% end %>
                 </li>
               </ul>
             </li>
-          <% else %>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#"><i class="icon-fixed-width icon-cogs"></i> Settings &nbsp</a>
+              <ul class="dropdown">
+                <li>
+                  <%= link_to user_path(current_user) do %>
+                  <i class="icon-user"></i> My Profile
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to edit_user_registration_path do %>
+                  <i class="icon-fixed-width icon-pencil"></i> Edit Profile
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete  do %>
+                  <i class="icon-signout"></i> Logout
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+            <% else %>
             <li class="divider"></li>
             <li><%= link_to "Sign up", new_user_registration_path %> </li>
             <li class="divider"></li>
             <li>
               <%= link_to new_user_session_path do %>
-                <i class="icon-signin"></i> Login
+              <i class="icon-signin"></i> Login
               <% end %>
             </li>
-          <% end %>
-        <!-- /li> -->
-      </ul>
-    </section>
-  </nav>
-</div>
-<!-- </div> -->
+            <% end %>
+            <!-- /li> -->
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <!-- </div> -->
 
-<!-- ################################################# -->
-<!-- ##################   Errors  #################### -->
-<!-- ################################################# -->
+    <!-- ################################################# -->
+    <!-- ##################   Errors  #################### -->
+    <!-- ################################################# -->
 
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value, :class => "flash #{key}") %>
-<% end %>
-<div class="custom_nav">
-  <div class=body-styles>
-    <%= yield %>
-  </div>
-</div>
+    <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, :class => "flash #{key}") %>
+    <% end %>
+    <div class="custom_nav">
+      <div class=body-styles>
+        <%= yield %>
+      </div>
+    </div>
 
     <%= javascript_include_tag "application" %>
   </body>
-</html>
+  </html>
