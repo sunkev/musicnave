@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require jquery.jscrollpane.min
+//= require jquery.mousewheel.js
 //= require_tree .
+
 
 $(function(){ $(document).foundation(); });

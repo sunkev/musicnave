@@ -1,13 +1,49 @@
+<div id="title">Making a Lesson</div>
+
+<div class="form-body"
 <%= simple_form_for @lesson do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description, as: :text %>
-  <%= f.input :private %>
-  <%= f.association :students, label_method: :name_and_username %>
+  <div class="row">
+    <label class="col1">
+      Title:
+    </label>
+    <span class="col2">
+      <%= f.input :title, label: false%>
+    </span>
+  </div>
+
+  <div class="row">
+    <label class="col1comment">
+      Description:
+    </label>
+    <span class="col2comment">
+        <%= f.input :description, as: :text, label: false %>
+    </span>
+  </div>
+
+  <div class="row">
+    <label class="col1">
+      Private:
+    </label>
+    <span class="col2">
+        <%= f.input :private, label: false %>
+    </span>
+  </div>
+
+  <div class="row">
+    <label class="col1comment">
+      Add Students:
+    </label>
+    <span class="col2special">
+        <%= f.association :students, label: false, label_method: :name_and_username %>
+    </span>
+  </div>
 
   <div> Upload a Photo </div>
 
   <%= f.file_field :lesson_photo %>
   <%= f.button :submit %>
 <% end %>
+
+</div>
 
 <%= link_to "Cancel", profile_lessons_path, class: 'button' %>
