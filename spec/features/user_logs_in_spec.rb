@@ -18,10 +18,10 @@ feature 'user logs in', %Q{
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
 
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     expect(page).to have_content("Logged in as #{user.username}")
-    expect(page).to have_content("Logout")
+    expect(page).to have_content("Sign out")
   end
 
   scenario 'user enters invalid username' do
@@ -29,7 +29,7 @@ feature 'user logs in', %Q{
 
     fill_in 'Username', with: user.username
     fill_in 'Password', with: 'bogus password'
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     expect(page).to have_content("Sign in")
   end
@@ -39,7 +39,7 @@ feature 'user logs in', %Q{
 
     fill_in 'Username', with: 'bogusname'
     fill_in 'Password', with: user.password
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     expect(page).to have_content("Sign in")
   end

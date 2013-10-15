@@ -1,3 +1,5 @@
+$title-color: rgb(80, 91, 101);
+
 .info-block {
   margin-top: 5px;
   display: inline-block;
@@ -19,7 +21,7 @@
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
   font-weight: bold;
-  color: rgb(80, 91, 101);
+  color: $title-color;
   font-size: 45px;
   margin: 0;
   padding: 0;
@@ -38,7 +40,7 @@
 .title-icon {
   padding-left: 75px;
   font-size: 25px;
-  color: rgb(80, 91, 101);
+  color: $title-color;
 }
 
 .title-header {
@@ -50,7 +52,7 @@
 .title-text {
   font: 1.3em Georgia, Serif;
 
-  color: rgb(80, 91, 101);
+  color: $title-color;
   line-height: 1.8;
 }
 

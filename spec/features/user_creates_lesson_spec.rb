@@ -18,7 +18,7 @@ feature 'User creates a lesson', %Q{
     visit new_user_session_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     visit new_lesson_path(:user)
     fill_in 'Title', with: 'Flute Lessons'
@@ -32,7 +32,7 @@ feature 'User creates a lesson', %Q{
     visit new_user_session_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     visit new_lesson_path(:user)
     click_button 'Create Lesson'
@@ -50,7 +50,7 @@ feature 'User creates a lesson', %Q{
     visit new_user_session_path
     fill_in 'Username', with: user.username
     fill_in 'Password', with: user.password
-    click_button 'Sign in'
+    click_button 'Sign In'
 
     click_on 'My Lessons'
     click_on 'Make a lesson'

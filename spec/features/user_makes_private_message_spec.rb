@@ -29,9 +29,9 @@ feature 'user gives another user a private message', %Q{
     fill_in 'Username', with: kevin.username
     fill_in 'Password', with: kevin.password
 
-    click_button 'Sign in'
+    click_button 'Sign In'
 
-    click_link "Private messages"
+    click_link "Send a message"
     click_link "New message"
     select adam.username, from: 'Recipient'
     fill_in "Body", with: body_paragraph

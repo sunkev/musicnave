@@ -1,102 +1,138 @@
-/* Mostly written by Veerle */
-
-
-.form-body {
-  background-color: #DBE8F9;
-  font: 12px/24px "Lucida Grande", "Trebuchet MS", Arial, Helvetica, sans-serif;
-  color: #5A698B;
+.container {
+    width: 406px;
+    max-width: 406px;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    padding-top: 20px;
 }
 
-#title {
-  width: 330px;
-  height: 26px;
-  color: #5A698B;
-  font: bold 13px/18px "Lucida Grande", "Trebuchet MS", Arial, Helvetica, sans-serif;
-  padding-top: 5px;
-  background: transparent url("bg_legend.gif") no-repeat;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
+#signup {
+    padding: 0px 25px 25px;
+    background: #fff;
+    box-shadow:
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ),
+        0px 4px 20px rgba( 0,0,0,0.33 );
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    display: table;
+    position: static;
 }
 
-form {
-  width: 335px;
+#signup .header {
+    margin-bottom: 20px;
+    // text-align: left;
 }
 
-.col1 {
-  text-align: right;
-  width: 135px;
-  height: 31px;
-  margin: 0;
-  float: left;
-  margin-right: 2px;
-  background: url("bg_label.gif") no-repeat;
+#signup .header h3 {
+    color: #333333;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 0px;
 }
 
-.col2 {
-  width: 195px;
-  height: 31px;
-  display: block;
-  float: left;
-  margin: 0;
-  background: url("bg_textfield.gif") no-repeat;
+#signup .header p {
+    color: #8f8f8f;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 7px;
+    margin-bottom: -5px;
 }
 
-.col2comment {
-  width: 195px;
-  height: 98px;
-  margin: 0;
-  display: block;
-  float: left;
-  background: url("bg_textarea.gif") no-repeat;
+#signup .sep {
+    height: 1px;
+    background: #e8e8e8;
+    width: 406px;
+    margin: 0px -25px;
 }
 
-.col1comment {
-  text-align: right;
-  width: 135px;
-  height: 98px;
-  float: left;
-  display: block;
-  margin-right: 2px;
-  background: url("bg_label_comment.gif") no-repeat;
+#signup .inputs {
+    margin-top: 25px;
 }
 
-div.row {
-  clear: both;
-  width: 335px;
+#signup .inputs label {
+
+    color: #8f8f8f;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+    display: block;
 }
 
-.submit {
-  height: 29px;
-  width: 330px;
-  background: url("bg_submit.gif") no-repeat;
-  padding-top: 5px;
-  clear: both;
+input::-webkit-input-placeholder {
+    color:    #b5b5b5;
 }
 
-.input {
-  background-color: #fff;
-  font: 11px/14px "Lucida Grande", "Trebuchet MS", Arial, Helvetica, sans-serif;
-  color: #5A698B;
-  margin: 4px 0 5px 8px;
-  padding: 1px;
-  border: 1px solid #8595B2;
+input:-moz-placeholder {
+    color:    #b5b5b5;
 }
 
-.textarea {
-  border: 1px solid #8595B2;
-  background-color: #fff;
-  font: 11px/14px "Lucida Grande", "Trebuchet MS", Arial, Helvetica, sans-serif;
-  color: #5A698B;
-  margin: 4px 0 5px 8px;
+#signup .inputs .checkboxy {
+    display: block;
+    position: static;
+    height: 25px;
+    margin-top: 5px;
+    clear: both;
+
+     float: left;
+    font-size: 13px;
+    font-style: italic;
 }
 
-.col2special {
-  width: 195px;
-  height: 98px;
-  margin: 0;
-  display: block;
-  float: left;
-  background: url("bg_textarea.gif") no-repeat;
-  font: 1px "Lucida Grande", "Trebuchet MS", Arial, Helvetica, sans-serif;
+#signup .inputs input[type=checkbox] {
+    float: left;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+#signup .inputs .button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+        background: -moz-linear-gradient(
+        top,
+        #b9c5dd 0%,
+        #a4b0cb);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#b9c5dd),
+        to(#a4b0cb));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #737b8d;
+    -moz-box-shadow:
+        0px 5px 5px rgba(000,000,000,0.1),
+        inset 0px 1px 0px rgba(255,255,255,0.5);
+    -webkit-box-shadow:
+        0px 5px 5px rgba(000,000,000,0.1),
+        inset 0px 1px 0px rgba(255,255,255,0.5);
+    box-shadow:
+        0px 5px 5px rgba(000,000,000,0.1),
+        inset 0px 1px 0px rgba(255,255,255,0.5);
+    text-shadow:
+        0px 1px 3px rgba(000,000,000,0.3),
+        0px 0px 0px rgba(255,255,255,0);
+    display: table;
+    position: static;
+    clear: both;
+}
+
+#signup .inputs #submit:hover {
+    background: -moz-linear-gradient(
+        top,
+        #a4b0cb 0%,
+        #b9c5dd);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#a4b0cb),
+        to(#b9c5dd));
 }

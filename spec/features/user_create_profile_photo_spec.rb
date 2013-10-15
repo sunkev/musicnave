@@ -18,11 +18,11 @@ feature 'authenicated user adds a profile photo',%Q{
     before(:each) do
       user = FactoryGirl.create(:user)
       visit '/'
-      click_on 'Login'
+      click_on 'Sign in'
       fill_in 'Username', with: user.username
       fill_in 'Password', with: user.password
 
-      click_button 'Sign in'
+      click_button 'Sign In'
       click_on 'Edit Profile'
     end
 
