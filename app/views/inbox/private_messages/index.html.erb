@@ -1,7 +1,7 @@
 <div class=side-bar-conversations>
   <% current_user.all_conversations.each do |user_id| %>
     <% conversation_user = User.find(user_id) %>
-    <%= image_tag conversation_user.photo.url %>
+    <%= image_tag conversation_user.photo.url(:thumb) %>
     <%= conversation_user.name_and_username %>
   <% end %>
 </div>
