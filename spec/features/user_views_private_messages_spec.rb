@@ -5,7 +5,6 @@ feature 'view all private messages' do
   let(:kevin) { FactoryGirl.create(:user) }
   let(:adam) { FactoryGirl.create(:user) }
 
-
   before(:each) do
     sign_in(kevin)
   end
@@ -13,12 +12,6 @@ feature 'view all private messages' do
   scenario "user sees private messages" do
 
     body_paragraph = 'some random text'
-
-    visit new_user_session_path
-    fill_in 'Username', with: kevin.username
-    fill_in 'Password', with: kevin.password
-
-    click_button 'Sign In'
 
     click_link "Send a message"
     select adam.username, from: 'private_message_recipient_id'
