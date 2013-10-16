@@ -39,18 +39,20 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'capybara'
   gem 'launchy'
-  gem 'simple_form'
   gem 'quiet_assets'
 end
-gem 'chosen-rails'
-gem "database_cleaner", "~> 1.1.1"
 
+gem "database_cleaner", "~> 1.1.1"
+gem 'simple_form'
 #Add devise
 gem 'devise'
-gem 'compass'
+gem "compass-rails", "~> 2.0.alpha.0"
+gem 'chosen-rails'
 gem 'zurb-foundation'
 gem 'carrierwave'
+gem 'rmagick'
 
+gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

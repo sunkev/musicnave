@@ -31,4 +31,15 @@ class User < ActiveRecord::Base
   def abv_name
     "#{first_name} #{last_name[0]}."
   end
+
+  def all_conversations
+    conversation_array = []
+    self.sent_messages.each do |pm|
+      conversation_array << pm.recipient_id
+    end
+    self.received_messages.each do |pm|
+      conversation_array << pm.sender_id
+    end
+    conversation_array.uniq!
+  end
 end

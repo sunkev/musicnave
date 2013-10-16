@@ -14,7 +14,15 @@
     <%= f.input :password_confirmation, :required => false %>
     <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
 
-    <%# This is the photo uploading%>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Update" %>
+  </div>
+
+
+<% end %>
+
+<%# This is the photo uploading%>
     <%= image_tag current_user.photo.url %>
     <%= content_tag :h2, 'Upload a Photo' %>
 
@@ -24,12 +32,6 @@
     <% end %>
     <%# This is the photo uploading end%>
 
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
 
 <h3>Cancel my account</h3>
 

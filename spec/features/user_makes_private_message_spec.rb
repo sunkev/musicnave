@@ -32,7 +32,6 @@ feature 'user gives another user a private message', %Q{
     click_button 'Sign In'
 
     click_link "Send a message"
-    click_link "New message"
     select adam.username, from: 'private_message_recipient_id'
     fill_in "Body", with: body_paragraph
     click_button "Send message"

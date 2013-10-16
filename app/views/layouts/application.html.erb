@@ -75,17 +75,17 @@
             </li>
             <li class="divider"></li>
             <li class="has-dropdown">
-              <%= link_to private_messages_path(current_user) do %>
+              <%= link_to inbox_private_messages_path do %>
               <i class="icon-envelope"></i> Messages &nbsp
               <% end %>
               <ul class="dropdown">
                 <li>
-                  <%= link_to private_messages_path(current_user) do %>
+                  <%= link_to inbox_private_messages_path do %>
                   <i class="icon-envelope-alt"></i> View messages
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to private_messages_path do %>
+                  <%= link_to new_private_message_path do %>
                   <i class="icon-comment"></i> Send a message
                   <% end %>
                 </li>

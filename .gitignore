@@ -15,4 +15,8 @@
 /log/*.log
 /tmp
 
+# Ignore database
 /config/database.yml
+
+#ignore public folder
+/public/uploads

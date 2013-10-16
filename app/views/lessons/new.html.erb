@@ -12,8 +12,6 @@
       </div>
       <div class="mycontainer">
         <%= f.association :students, label: false,  required: false, label_method: :name_and_username, input_html: { class: 'chosen-students'}%>
-
-
       </div>
       <%= f.button :submit, "Create Lesson" %>
       <%= link_to "Cancel", profile_lessons_path, class: 'button' %>

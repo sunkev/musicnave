@@ -42,6 +42,4 @@ feature 'view all lessons' do
     click_on 'My Lessons'
     expect(page).to have_content(title)
   end
-
-
 end
