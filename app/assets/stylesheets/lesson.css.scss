@@ -1,3 +1,10 @@
-.chosen-choices {
-  height: 500px;
+.search-field {
+  height: 40px ;
+}
+.chosen-choices li.search-field input[type="text"] {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #8f8f8f;
+}
+.mycontainer-messages {
+  margin-bottom: 15px
 }

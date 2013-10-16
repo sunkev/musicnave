@@ -1,8 +1,15 @@
-<h2>Send Message</h2>
-
-<%= simple_form_for(@message) do |f| %>
-  <%= f.association :recipient, label_method: :name_and_username %>
-  <%= f.input :body %>
-
-  <%= f.button :submit, 'Send message', class: 'button' %>
-<% end %>
+<div class="container">
+    <%= simple_form_for(@message) do |f| %>
+    <div class="header">
+      <h3>Send Message</h3>
+    </div>
+    <div class="sep"></div>
+    <div class="inputs">
+      <div class="mycontainer-messages">
+      <%= f.association :recipient, label: false,  label_method: :name_and_username, input_html: { class: 'chosen-messages'} %>
+      </div>
+      <%= f.input :body, required: true, label: false, placeholder: 'Body', inline_label: "Body", as: :text, input_html: { class: 'resizedTextbox'} %>
+      <%= f.button :submit, "Send message" %>
+    </div>
+    <% end %>
+</div>

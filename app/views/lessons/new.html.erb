@@ -6,14 +6,17 @@
     <div class="sep"></div>
     <div class="inputs">
       <%= f.input :title, label: false,  required: true, placeholder: 'Title', inline_label: "Title" %>
-      <%= f.input :title, required: true, label: false, placeholder: 'Description', inline_label: "Description", as: :text %>
+      <%= f.input :description, required: true, label: false, placeholder: 'Description', inline_label: "Description", as: :text %>
       <div class="checkboxy">
         <%= f.input :private, label: false, inline_label: "Private"%>
       </div>
-      <%= f.association :students, label: "Students",  required: false, label_method: :name_and_username, placeholder: 'Add students to the lesson', input_html: { class: 'chosen-students' }%>
-      <%= f.button :submit, "Sign In" %>
+      <div class="mycontainer">
+        <%= f.association :students, label: false,  required: false, label_method: :name_and_username, input_html: { class: 'chosen-students'}%>
+
+
+      </div>
+      <%= f.button :submit, "Create Lesson" %>
+      <%= link_to "Cancel", profile_lessons_path, class: 'button' %>
     </div>
     <% end %>
 </div>
-
-<%= link_to "Cancel", profile_lessons_path, class: 'button' %>
