@@ -5,7 +5,7 @@
     <div class=seperater></div>
     <% current_user.all_conversations.each do |user_id| %>
     <% conversation_user = User.find(user_id) %>
-    <div class=side-bar-inner>
+    <div class=side-bar-inner id="<%=user_id%>">
       <% if conversation_user.photo? %>
         <%= image_tag conversation_user.photo.url(:thumb) %>
       <% else %>
@@ -14,29 +14,11 @@
       <%= conversation_user.full_name %>
     </div>
     <% end %>
+  <% end %>
   </div>
 </div>
 
-  <% current_user.all_conversations.each do |user_id| %>
-  <% conversation_user = User.find(user_id) %>
-  <div>
-    <% messages = PrivateMessage.where("(recipient_id = ? AND sender_id = ?) OR (recipient_id = ? AND sender_id = ?)", conversation_user.id, current_user.id, current_user.id, conversation_user.id) %>
-    <% if !messages.blank? %>
-      <% messages.each do |message| %>
-        <% if conversation_user.photo? %>
-          <%= image_tag conversation_user.photo.url(:thumb) %>
-        <% else %>
-          <%= image_tag "blank-profile-hi-small.png" %>
-        <% end %>
-      <%= conversation_user.name_and_username %>
-      <p><%= message.body %></p>
-      <% end %>
-    <% end %>
-  </div>
-  <% end %>
-
-  <div>
-  </div>
-<% end %>
+<div id=message-container>
+</div>
 
 <%= link_to 'New message', new_private_message_path, class: 'message-button' %>

@@ -13,7 +13,7 @@ Musicnave::Application.routes.draw do
   resources :private_messages, only: [:new, :create, :show]
 
   namespace :inbox do
-    resources :private_messages, only: [:index]
+    resources :private_messages, only: [:index, :show]
   end
 
   get 'home/index'
