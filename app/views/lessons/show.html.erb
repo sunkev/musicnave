@@ -1,4 +1,4 @@
-
+<!-- start of scroll  -->
 <div class="scroll-pane">
   <p>
     <strong>Title:</strong>
@@ -28,10 +28,11 @@
     <p> Message </p>
     <p> <%= comment.body %> </p>
     <p> <% if comment.user_id == current_user.id %> </p>
-      <li> <%= link_to 'Edit comment', edit_comment_path(comment) %></li>
-        <%- end %>
+    <li> <%= link_to 'Edit comment', edit_comment_path(comment) %></li>
+    <%- end %>
     <%- end %>
   </p>
+<!-- end of scroll  -->
 
   <div>
     Students
@@ -60,49 +61,6 @@
 <% end %>
 
 <% if @lesson.teacher_id == current_user.id || @lesson.students.any? {|student| student.id == current_user.id} %>
-  <% else  %>
-<%= link_to 'Enroll now!', enroll_lesson_path(@lesson), method: :post, class: 'button' %>
-  <% end  %>
-
-
-<style>
-
-.scroll-pane
-{
-  width: 100%;
-  height: 200px;
-  overflow: auto;
-}
-.jspCap
-{
-  display: block;
-  background: #eeeef4;
-}
-
-.jspVerticalBar .jspCap
-{
-  height: 20px;
-}
-
-.jspHorizontalBar .jspCap
-{
-  width: 50px;
-  height: 100%;
-}
-
-
-</style>
-<script>
-$(function()
-{
-  $('.scroll-pane').jScrollPane(
-    {
-    showArrows: true,
-    verticalGutter: 30,
-    verticalDragMinHeight: 30,
-    verticalDragMaxHeight: 30,
-
-    }
-  );
-});
-</script>
+<% else  %>
+  <%= link_to 'Enroll now!', enroll_lesson_path(@lesson), method: :post, class: 'button' %>
+<% end  %>

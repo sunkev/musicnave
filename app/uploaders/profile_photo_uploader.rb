@@ -24,9 +24,26 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  # version :thumb do
+  #   process resize_to_fill: [280, 280]
+  # end
+
   version :thumb do
-    process resize_to_fill: [280, 280]
+    process resize_to_fill: [50, 50]
   end
+
+  version :profile do
+    process resize_to_fill: [100, 100]
+  end
+
+  # def default_url
+  #   ActionController::Base.helpers.asset_path(["blank-profile-hi.png"].compact.join('_'))
+  # end
+
+  def default_url
+   "blank-profile-hi.png"
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -43,9 +60,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :scale => [50, 50]
-  # end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

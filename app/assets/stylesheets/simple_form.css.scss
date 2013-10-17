@@ -53,16 +53,6 @@
     margin-top: 25px;
 }
 
-.simple_form .inputs label {
-
-    color: #8f8f8f;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 7px;
-    display: block;
-}
-
 input::-webkit-input-placeholder {
     color:    #b5b5b5;
 }
@@ -135,4 +125,8 @@ input:-moz-placeholder {
         linear, left top, left bottom,
         from(#a4b0cb),
         to(#b9c5dd));
+}
+
+.alert-box.alert {
+    max-width: 300px;
 }

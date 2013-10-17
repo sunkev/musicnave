@@ -34,12 +34,16 @@ class User < ActiveRecord::Base
 
   def all_conversations
     conversation_array = []
-    self.sent_messages.each do |pm|
-      conversation_array << pm.recipient_id
+    if !self.sent_messages.blank?
+      self.sent_messages.each do |pm|
+        conversation_array << pm.recipient_id
+      end
     end
-    self.received_messages.each do |pm|
-      conversation_array << pm.sender_id
+    if !self.received_messages.blank?
+      self.received_messages.each do |pm|
+        conversation_array << pm.sender_id
+      end
     end
-    conversation_array.uniq!
+    conversation_array.uniq
   end
 end
