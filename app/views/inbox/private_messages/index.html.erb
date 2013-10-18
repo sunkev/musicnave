@@ -7,7 +7,7 @@
     <% conversation_user = User.find(user_id) %>
     <div class=side-bar-inner id="<%=user_id%>">
       <% if conversation_user.photo? %>
-        <%= image_tag conversation_user.photo.url(:thumb) %>
+        <%= image_tag conversation_user.photo.url %>
       <% else %>
         <%= image_tag "blank-profile-hi-small.png" %>
       <% end %>
@@ -18,7 +18,11 @@
   </div>
 </div>
 
-<div id=message-container>
+<div class="user-message-scroll">
+  <div id=message-container>
+  </div>
 </div>
 
-<%= link_to 'New message', new_private_message_path, class: 'message-button' %>
+<div class="message-button-container">
+  <%= link_to 'New message', new_private_message_path, class: 'message-button' %>
+</div>

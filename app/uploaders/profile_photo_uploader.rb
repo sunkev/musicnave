@@ -24,16 +24,13 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+
   # version :thumb do
-  #   process resize_to_fill: [280, 280]
+  #   process resize_to_fill: [50, 50]
   # end
 
-  version :thumb do
-    process resize_to_fill: [50, 50]
-  end
-
   version :profile do
-    process resize_to_fill: [100, 100]
+    process resize_to_fill: [150, 150]
   end
 
   # def default_url
@@ -53,7 +50,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  process :resize_to_fill => [50, 50]
   #
   # def scale(width, height)
   #   # do something

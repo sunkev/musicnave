@@ -5,9 +5,8 @@
 
 .side-bar-container {
   background: #f4f4f4;
-  width: 300px;
+  width: 310px;
   height: 800px;
-  margin-right: 10px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
   h4 {
     font-size: 22px;
@@ -53,9 +52,9 @@
 
 .message-button {
   margin-left:auto;
-  margin-right:auto;
+  margin-right: 20px;
     width: 30%;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 15px 0;
     color: #fff;
     font-size: 14px;
@@ -94,10 +93,38 @@
 
 .user-conversation-scroll
 {
-  width: 32.1%;
+  width: 32.2%;
+  margin-right: 20px;
   height: 600px;
+  display:inline-block;
   overflow: auto;
-  border: 2px solid #d6d6d6;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
 }
 
+.user-message-scroll
+{
+  vertical-align:top;
+  width: 65.33%;
+  height: 483px;
+  overflow: auto;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
+  display:inline-block;
+}
 
+#message-container {
+  background: #f4f4f4;
+  width: 650px;
+  height: 800px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
+}
+
+.message-button-container {
+  vertical-align:top;
+  margin-top: -110px;
+  margin-left: 346px;
+  background: #f4f4f4;
+  display:inline-block;
+  height: 107px;
+  width: 653px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
+}
