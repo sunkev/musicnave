@@ -10,7 +10,7 @@ Musicnave::Application.routes.draw do
     resources :enrollments, only: [:create]
   end
 
-  resources :private_messages, only: [:new, :create, :show]
+  resources :private_messages, only: [:new, :create]
 
   namespace :inbox do
     resources :private_messages, only: [:index, :show]

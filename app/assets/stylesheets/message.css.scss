@@ -112,6 +112,9 @@
 }
 
 #message-container {
+  // background: image-url('sky.png') fixed;
+  // background-size: 100% 100%;
+  // background-repeat:no-repeat;
   background: #f4f4f4;
   width: 650px;
   height: 800px;
@@ -127,4 +130,98 @@
   height: 107px;
   width: 653px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
+}
+
+.js-message-container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  margin: 0px 20px;
+  text-align: left;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  .inner-message {
+    margin-top: 20px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.49), 0px 1px 0px rgb(252, 252, 252) inset;
+    p {
+      display: inline-block;
+      margin-left: 5px;
+      margin-top: -3px;
+      vertical-align: top;
+      color: rgb(59, 89, 152);
+    }
+  }
+  // .message-body {
+  // }
+}
+
+#left {
+  float: left;
+  margin-right: auto;
+}
+
+#left .block:before {
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  content: "";
+
+  border-width: 8px 10px 8px 17px;
+  border-image: url(speech_bubble_left_2.png) 8 10 8 17 stretch stretch;
+  -webkit-border-image: url(speech_bubble_left_2.png) 8 10 8 17 stretch stretch;
+  -moz-border-image: url(speech_bubble_left_2.png) 8 10 8 17 stretch stretch;
+  -o-border-image: url(speech_bubble_left_2.png) 8 10 8 17 stretch stretch;
+  }
+
+
+// #left:after{
+//   z-index: -1;
+//   position: absolute;
+//   left: -36px;
+//   width: 32px;
+//   bottom: 0px;
+//   height: 32px;
+//   content:"";
+
+//   border-radius: 3px;
+//   -webkit-border-radius: 3px;
+// }
+
+#right .block:before {
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  content: "";
+  border-width: 8px 17px 8px 10px;
+  border-image: url(speech_bubble_right_2.png) 8 17 8 10 stretch stretch ;
+  -webkit-border-image: url(speech_bubble_right_2.png) 8 17 8 10 stretch stretch ;
+  -moz-border-image: url(speech_bubble_right_2.png) 8 17 8 10 stretch stretch ;
+  -o-border-image: url(speech_bubble_right_2.png) 8 17 8 10 stretch stretch ;
+}
+
+#right {
+  float: right;
+  padding-right: 20px;
+  margin-left: auto;
+  text-align: right;
+}
+
+.block {
+  border: 1px solid grey;
+  border-radius: 5px 5px 5px 0px;
+  -webkit-border-radius: 5px 5px 5px 0px;
+  -moz-border-radius: 5px 5px 5px 0px;
+  -o-border-radius: 5px 5px 5px 0px;
+  -ms-border-radius: 5px 5px 5px 0px;
 }
