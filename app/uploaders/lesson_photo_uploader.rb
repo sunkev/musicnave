@@ -27,6 +27,10 @@ class LessonPhotoUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fill => [300, 300]
   end
+
+  def default_url
+   "lessonplanner.gif"
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
@@ -36,7 +40,7 @@ class LessonPhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  process :scale => [180, 180]
   #
   # def scale(width, height)
   #   # do something

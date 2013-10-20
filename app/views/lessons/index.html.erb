@@ -1,8 +1,22 @@
-<h1>Lessons</h1>
+<div class='lesson-title'>Lessons</div>
 
-<ul>
+
 <% @lessons.each do |lesson| %>
-  <li><%= link_to(lesson.title, lesson) %></li>
-  <li><%= lesson.description %></li>
+
+  <div class=lessons-container>
+    <div class=lesson-photo-and-button>
+      <%= image_tag lesson.lesson_photo.url %>
+      <%= link_to "View full lesson", lesson, class: "lesson_button" %>
+    </div>
+
+    <div class=lesson-title-container>
+      <%= link_to lesson.title, lesson, class: "lesson-each-title"  %>
+    </div>
+
+    <div class=lesson-each-body>
+      <%= lesson.description %>
+    </div>
+  </div>
+
 <% end %>
-</ul>
+

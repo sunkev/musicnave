@@ -1,10 +1,112 @@
+$border-color: #C7C7C7;
+
 .search-field {
   height: 40px ;
 }
+
 .chosen-choices li.search-field input[type="text"] {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #8f8f8f;
 }
+
 .mycontainer-messages {
   margin-bottom: 15px
+}
+
+.lesson-title {
+  font-family: 'Whitney Cond A', 'Whitney Cond B', "ronnia-condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 48px;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+.lesson_button {
+
+  width: 182px;
+    margin-top: 10px;
+    padding: 8px 0;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+        background: -moz-linear-gradient(
+        top,
+        #b9c5dd 0%,
+        #a4b0cb);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#b9c5dd),
+        to(#a4b0cb));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #737b8d;
+    -moz-box-shadow:
+        0px 5px 5px rgba(000,000,000,0.1),
+        inset 0px 1px 0px rgba(255,255,255,0.5);
+    -webkit-box-shadow:
+        0px 5px 5px rgba(000,000,000,0.1),
+        inset 0px 1px 0px rgba(255,255,255,0.5);
+    box-shadow:
+        0px 5px 5px rgba(000,000,000,0.1),
+        inset 0px 1px 0px rgba(255,255,255,0.5);
+    text-shadow:
+        0px 1px 3px rgba(000,000,000,0.3),
+        0px 0px 0px rgba(255,255,255,0);
+    display: table;
+    position: static;
+    clear: both;
+}
+
+.lesson_button:hover {
+    background: -moz-linear-gradient(
+        top,
+        #a4b0cb 0%,
+        #b9c5dd);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#a4b0cb),
+        to(#b9c5dd));
+    color: white;
+}
+
+.lessons-container {
+  border: 1px solid $border-color;
+}
+
+.lesson-photo-and-button {
+  float: left;
+  margin-top: 22px;
+  margin-left: 20px;
+
+  img {
+    border: 1px solid $border-color;
+  }
+}
+
+.lesson-each-title {
+  color: black;
+  font-family: 'Calibri', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-right: 580px;
+  padding-bottom: 5px;
+  display: block;
+}
+
+.lesson-title-container {
+  background: #f2f4f6;
+  border-bottom: 1px solid $border-color;
+  font-family: 'Calibri', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 30px 20px 20px 220px
+}
+
+.lesson-each-body {
+  clear:both;
 }

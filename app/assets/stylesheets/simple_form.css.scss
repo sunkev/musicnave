@@ -22,7 +22,6 @@
 .simple_form  {
     .header {
     margin-bottom: 20px;
-    // text-align: left;
     }
 }
 
@@ -116,7 +115,7 @@ input:-moz-placeholder {
     clear: both;
 }
 
-.simple_form .inputs #submit:hover {
+.simple_form .inputs .button:hover {
     background: -moz-linear-gradient(
         top,
         #a4b0cb 0%,

@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name[0]}."
   end
 
+  def initials
+    "#{first_name[0].capitalize}. #{last_name[0].capitalize}."
+  end
+
   def all_conversations
     conversation_array = []
     if !self.sent_messages.blank?
