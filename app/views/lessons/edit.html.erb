@@ -2,11 +2,27 @@
 
 <%= "Editing #{@lesson.title}" %>
 
-<%= simple_form_for @lesson do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description, as: :text %>
-  <%= f.submit 'Confirm edit' %>
-<% end %>
+<div class="container">
+    <%= simple_form_for @lesson do |f| %>
+    <div class="header">
+      <h3>Make a lesson</h3>
+    </div>
+    <div class="sep"></div>
+    <div class="inputs">
+      <%= f.input :title, label: false,  required: true, placeholder: 'Title', inline_label: "Title" %>
+      <%= f.input :description, required: true, label: false, placeholder: 'Description', inline_label: "Description", as: :text %>
+      <%= f.input :state, collection: STATES, label: false, required: false, input_html: { class: 'chosen-states'} %>
+      <%= f.input :city, required: true, label: false, placeholder: 'City', inline_label: "City"   %>
+      <%= f.association :students, label: false,  required: false, label_method: :name_and_username, input_html: { class: 'chosen-students'}%>
+      <div class="checkboxy">
+        <%= f.input :private, label: false, inline_label: "Private"%>
+      </div>
+      <%= f.button :submit, "Edit" %>
+      <%= link_to "Cancel", profile_lessons_path, class: 'button' %>
+    </div>
+    <% end %>
+</div>
+
 
 <div> Upload a Photo </div>
 <%= form_for @lesson do |form| %>

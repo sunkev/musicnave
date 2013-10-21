@@ -1,5 +1,6 @@
 class LessonsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :enroll]
+  before_filter :authenticate_teacher!, only: [:edit]
 
   def index
     @lessons = Lesson.where(private: false).page(params[:page]).per(4)
@@ -83,4 +84,15 @@ class LessonsController < ApplicationController
   def lesson_params
     params.require(:lesson).permit(:title, :state, :city, :lesson_photo, :private, :description, student_ids: [])
   end
+
+  def authenticate_teacher!
+    if user_signed_in? && current_user.id == Lesson.find(params[:id]).teacher_id
+      return true
+    else
+      redirect_to profile_lessons_path,
+      :notice => "You must have permission to access this category."
+      return false
+    end
+  end
+
 end

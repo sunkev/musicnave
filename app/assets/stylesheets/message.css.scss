@@ -112,9 +112,6 @@
 }
 
 #message-container {
-  // background: image-url('sky.png') fixed;
-  // background-size: 100% 100%;
-  // background-repeat:no-repeat;
   background: #f4f4f4;
   width: 650px;
   height: 800px;
@@ -133,7 +130,7 @@
 }
 
 .js-message-container:first-child {
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .js-message-container {
@@ -160,20 +157,16 @@
 }
 
 .block {
-  // position: absolute;
-  // display: block;
   padding: 0;
   margin: 0;
-  max-width: 300px;
+  max-width: 350px;
 }
 #left {
   float: left;
-  // display: block;
   margin-left: 10px;
 }
 
 #right {
-  // display: block;
   float: right;
 }
 

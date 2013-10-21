@@ -1,15 +1,45 @@
-<h1>My Lessons</h1>
+<div class='lesson-title'>My Lessons</div>
 
-<ul>
 <% if @lessons.blank? %>
   <%= "You have no lessons" %>
-<% else %>
-  <% @lessons.each do |lesson| %>
-    <li><%= link_to(lesson.title, lesson) %></li>
+  <% else %>
+<% @lessons.each do |lesson| %>
+
+  <div class='lessons-container'>
+    <div class='lesson-photo-and-button'>
+      <%= image_tag lesson.lesson_photo.url %>
+      <%= link_to "View full lesson", lesson, class: "lesson_button" %>
+    </div>
+
+    <div class='lesson-title-container'>
+      <%= link_to lesson.title, lesson, class: "lesson-each-title"  %>
+      <span class='lesson-location'><i class='icon-location-arrow icon-large'></i><%= " #{lesson.city}, #{lesson.state}" %></span>
+    </div>
+
+
+    <div class='lesson-each-body'>
+      <div>
+        <div class='lesson-label'>Taught by: </div>
+        <span class='lesson-text'><%= User.find(lesson.teacher_id).abv_name %> </span>
+      </div>
+
+      <div>
+        <div class='lesson-label'>Current number of students:</div>
+        <span class='lesson-text'><%= "#{lesson.students.count} #{lesson.student_counter(lesson.students.count)}" %> </span>
+      </div>
+
+      <div>
+        <div class='lesson-label'>Lesson description: </div>
+        <div class='lesson-body'><%= lesson.description %> </div>
+      </div>
+    </div>
+
     <li><%= link_to 'Edit lesson', edit_lesson_path(lesson) %></li>
+    <div class=clear>
+    </div>
+
+  </div>
   <% end %>
 <% end %>
-</ul>
-
 
 <%= link_to "Make a lesson", new_lesson_path, class: 'button'%>

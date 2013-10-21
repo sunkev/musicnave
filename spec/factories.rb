@@ -12,6 +12,8 @@ FactoryGirl.define do
     sequence(:title) { |n| "Lesson #{n}" }
     description "Learn music for fun!"
     association :teacher, factory: :user
+    state { "Massachusetts" }
+    city "Boston"
     private "false"
 
     trait :with_comments do
