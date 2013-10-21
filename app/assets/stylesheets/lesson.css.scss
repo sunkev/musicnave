@@ -9,10 +9,6 @@ $border-color: #C7C7C7;
   color: #8f8f8f;
 }
 
-.mycontainer-messages {
-  margin-bottom: 15px
-}
-
 .lesson-title {
   font-family: 'Whitney Cond A', 'Whitney Cond B', "ronnia-condensed", sans-serif;
   font-weight: 700;
@@ -24,7 +20,7 @@ $border-color: #C7C7C7;
 
 .lesson_button {
 
-  width: 182px;
+  width: 192px;
     margin-top: 10px;
     padding: 8px 0;
     color: #fff;
@@ -38,8 +34,8 @@ $border-color: #C7C7C7;
         #a4b0cb);
     background: -webkit-gradient(
         linear, left top, left bottom,
-        from(#b9c5dd),
-        to(#a4b0cb));
+        from(#619bed),
+        to(#5990de));
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -75,6 +71,12 @@ $border-color: #C7C7C7;
 
 .lessons-container {
   border: 1px solid $border-color;
+  margin-top: 18px;
+  background-color: #fcfcfc;
+}
+
+.lessons-container:last-child {
+  margin-bottom: 18px;
 }
 
 .lesson-photo-and-button {
@@ -83,19 +85,41 @@ $border-color: #C7C7C7;
   margin-left: 20px;
 
   img {
-    border: 1px solid $border-color;
+    background: black;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    padding: 3.5px;
+    -webkit-box-shadow: 1px 2px 1px #d1d1d1;
+    -moz-box-shadow: 1px 2px 1px #d1d1d1;
+    box-shadow: 1px 2px 1px #d1d1d1;
   }
 }
 
 .lesson-each-title {
-  color: black;
+  color: #5990de;
   font-family: 'Calibri', sans-serif;
-  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 27px;
   font-weight: bold;
   text-align: left;
-  margin-right: 580px;
+  margin-top: 10px;
+  margin-left: 10px;
   padding-bottom: 5px;
   display: block;
+}
+
+.lesson-location {
+  color: #555;
+  font-family: 'HelveticaLight',sans-serif;
+  font-size: 0.58em;
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 5px;
+  display: block;
+  margin-top: 3px;
 }
 
 .lesson-title-container {
@@ -108,5 +132,49 @@ $border-color: #C7C7C7;
 }
 
 .lesson-each-body {
+  font-size: 16px;
+  font-family: 'HelveticaLight',sans-serif;
+  // margin-left: 10px;
+  margin-top: 15px;
+  margin-left: 228px;
+  width: 750px;
+  text-align: left;
+}
+
+.chosen-container-single .chosen-single {
+  margin-bottom: 15px;
+}
+
+.clear {
   clear:both;
+  padding-bottom: 20px;
+}
+
+.lesson-label {
+  color: #555;
+  font-size: 17px;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.lesson-text {
+  display: inline-block;
+  font-family: 'HelveticaLight',sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+.lesson-body {
+  font-family: 'HelveticaLight',sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }

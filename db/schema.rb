@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011003140) do
+ActiveRecord::Schema.define(version: 20131020041519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20131011003140) do
     t.datetime "updated_at"
     t.boolean  "private",      default: false, null: false
     t.string   "lesson_photo"
+    t.string   "state",                        null: false
+    t.string   "city",                         null: false
   end
 
   create_table "private_messages", force: true do |t|

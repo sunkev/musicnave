@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :enroll]
 
   def index
-    @lessons = Lesson.where(private: false)
+    @lessons = Lesson.where(private: false).page(params[:page]).per(4)
   end
 
   def show
@@ -81,6 +81,6 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title, :lesson_photo, :private, :description, student_ids: [])
+    params.require(:lesson).permit(:title, :state, :city, :lesson_photo, :private, :description, student_ids: [])
   end
 end

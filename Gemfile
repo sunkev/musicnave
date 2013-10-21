@@ -52,6 +52,7 @@ gem 'chosen-rails'
 gem 'zurb-foundation'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'kaminari'
 
 gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password

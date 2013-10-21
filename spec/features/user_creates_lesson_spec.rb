@@ -23,6 +23,8 @@ feature 'User creates a lesson', %Q{
     visit new_lesson_path(:user)
     fill_in 'Title', with: 'Flute Lessons'
     fill_in 'Description', with: 'The best lessons with KSun'
+    fill_in "City", with: "Boston"
+    select('Massachusetts', :from => 'State')
     click_button 'Create Lesson'
     expect(page).to have_content('Lesson successfully created')
   end
