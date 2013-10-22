@@ -1,28 +1,7 @@
-== README
+== Musicnavi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Musicnavi is an app that aims to help user either teach music lessons as a teacher or take music lessons as a student.
 
-Things you may want to cover:
+Currently, the messaging images only work on google chrome.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The application can be viewed at http://musicnavi.herokuapp.com/
