@@ -9,7 +9,7 @@ class Inbox::PrivateMessagesController < ApplicationController
     @message = current_user.sent_messages.build(message_params)
 
     if @message.save
-      redirect_to inbox_private_messages_path, notice: "Message sent"
+      render :index, notice: "Message sent"
     else
       render :new
     end

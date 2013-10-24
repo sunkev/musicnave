@@ -3,6 +3,7 @@ $('div.side-bar-inner').on('click', function(e) {
   $(e.currentTarget).toggleClass('on');
 
   var id = this.id;
+
   getMessage(id);
 
   // setTimeout(function(){alert(message)},300);
@@ -27,6 +28,8 @@ $('.user-message-scroll').jScrollPane(
 function getMessage(idx) {
   $('#message-container').html("");
 
+  $('#private_message_recipient_id').val(idx);
+
   $.get("/inbox/private_messages/"+idx+".json", function(data) {
      data.forEach(function(message) {
 
@@ -42,11 +45,11 @@ function getMessage(idx) {
         message.sender_photo = "/assets/blank-profile-hi-small.png";
       }
 
-      setOrder(direction, message.sender_photo, message.sender_name, message.body)
+      setOrder(direction, message.sender_photo, message.sender_name, message.body);
 
      });
   }, "json" );
-};
+}
 
 function setOrder(direction, image, name, body) {
   if (direction === 'right') {
@@ -69,3 +72,4 @@ function setOrder(direction, image, name, body) {
     );
   }
 }
+
