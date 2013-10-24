@@ -2,6 +2,17 @@ class Inbox::PrivateMessagesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    @message = PrivateMessage.new
+  end
+
+  def create
+    @message = current_user.sent_messages.build(message_params)
+
+    if @message.save
+      redirect_to inbox_private_messages_path, notice: "Message sent"
+    else
+      render :new
+    end
   end
 
   def show
@@ -11,5 +22,10 @@ class Inbox::PrivateMessagesController < ApplicationController
       format.html { render 'index' }# show.html.erb
       format.json { render :show }
     end
+  end
+
+  private
+  def message_params
+    params.require(:private_message).permit(:recipient_id, :body)
   end
 end

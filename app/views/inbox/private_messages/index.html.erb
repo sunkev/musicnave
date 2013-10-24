@@ -23,6 +23,23 @@
   </div>
 </div>
 
+<div class="container">
+    <%= simple_form_for(@message) do |f| %>
+    <div class="header">
+      <h3>Send Message</h3>
+    </div>
+    <div class="sep"></div>
+    <div class="inputs">
+      <div class="mycontainer-messages">
+      <%= f.association :recipient, label: false,  label_method: :name_and_username, input_html: { class: 'chosen-messages'} %>
+      </div>
+      <%= f.input :body, required: true, label: false, placeholder: 'Body', inline_label: "Body", as: :text, input_html: { class: 'resizedTextbox'} %>
+      <%= f.button :submit, "Send message" %>
+    </div>
+    <% end %>
+</div>
+
+
 <div class="message-button-container">
   <%= link_to 'New message', new_private_message_path, class: 'message-button' %>
 </div>
