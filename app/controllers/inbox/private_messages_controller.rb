@@ -9,9 +9,12 @@ class Inbox::PrivateMessagesController < ApplicationController
     @message = current_user.sent_messages.build(message_params)
 
     if @message.save
-      render :index, notice: "Message sent"
+      respond_to do |format|
+        format.html { render 'index' }# show.html.erb
+        format.json { render :show }
+      end
     else
-      render :new
+      render :index
     end
   end
 

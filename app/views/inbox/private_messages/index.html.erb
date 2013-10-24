@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<%= simple_form_for @message, :html=> { class: 'private-message-form' } do |f| %>
+<%= simple_form_for @message, :html=> { class: 'private-message-form' }, remote: true do |f| %>
   <%= f.association :recipient, label: false, :as => :hidden, input_html: { class: 'recipient-id'} %>
 <div class="message-button-container">
   <%= f.input :body, required: true, label: false, placeholder: 'Body', inline_label: "Body", as: :text %>

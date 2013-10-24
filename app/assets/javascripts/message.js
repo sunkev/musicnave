@@ -48,6 +48,7 @@ function getMessage(idx) {
       setOrder(direction, message.sender_photo, message.sender_name, message.body);
 
      });
+     return false;
   }, "json" );
 }
 
@@ -73,3 +74,8 @@ function setOrder(direction, image, name, body) {
   }
 }
 
+$(".private-message-form").on("ajax:success", function(e, data, status, xhr){
+  var id = $('div.side-bar-inner.on').attr('id');
+  console.log(id)
+  getMessage(id);
+});
