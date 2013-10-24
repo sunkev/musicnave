@@ -5,19 +5,39 @@ $('div.side-bar-inner').on('click', function(e) {
   var id = this.id;
 
   getMessage(id);
-
-  // setTimeout(function(){alert(message)},300);
+  setInterval (getMessage(id), 2500);
 });
 
-$('.user-conversation-scroll').jScrollPane(
-  {
-    showArrows: true,
-    verticalDragMinHeight: 120,
-    verticalDragMaxHeight: 75
-  }
-);
+// $(function()
+// {
+//   $('.user-message-scroll').jScrollPane(
+//   {
+//     showArrows: true,
+//     maintainPosition: true,
+//     reinitialiseOnImageLoad: true,
+//     verticalDragMinHeight: 120,
+//     verticalDragMaxHeight: 75
+//     }
+//   );
 
-$('.user-message-scroll').jScrollPane(
+//   $('.private-message-form').bind(
+//     'click',
+//     function()
+//     {
+//       api.getContentPane().load(
+//         'ajax_content.html',
+//         function()
+//         {
+//           api.reinitialise();
+//         }
+//       );
+//       return false;
+//     }
+//   );
+// });
+
+
+$('.user-conversation-scroll').jScrollPane(
   {
     showArrows: true,
     verticalDragMinHeight: 120,
@@ -76,6 +96,5 @@ function setOrder(direction, image, name, body) {
 
 $(".private-message-form").on("ajax:success", function(e, data, status, xhr){
   var id = $('div.side-bar-inner.on').attr('id');
-  console.log(id)
   getMessage(id);
 });
