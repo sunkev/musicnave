@@ -41,6 +41,8 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'quiet_assets'
+  gem 'jasmine-rails'
+  gem 'jasmine-jquery-rails'
 end
 
 gem "database_cleaner", "~> 1.1.1"
